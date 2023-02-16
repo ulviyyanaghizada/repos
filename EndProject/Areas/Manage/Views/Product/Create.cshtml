@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Create";
+}
+@model CreateProductVM
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-body">
+            <h4 class="card-title">Add Product</h4>
+            <form class="forms-sample" enctype="multipart/form-data" method="post">
+                <div class="form-group">
+                    <label asp-for="Title">Title</label>
+                    <input asp-for="Title" class="form-control" placeholder="Title">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CostPrice">CostPrice</label>
+                    <input asp-for="CostPrice" class="form-control" placeholder="CostPrice">
+                    <span asp-validation-for="CostPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SellPrice">SellPrice</label>
+                    <input asp-for="SellPrice" class="form-control" placeholder="SellPrice">
+                    <span asp-validation-for="SellPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Count">Count</label>
+                    <input asp-for="Count" class="form-control" placeholder="Count">
+                    <span asp-validation-for="Count" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Description</label>
+                    <input asp-for="Description" class="form-control" placeholder="Description">
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PrimaryImage">PrimaryImage</label>
+                    <input accept="image/*" asp-for="PrimaryImage" class="form-control" placeholder="PrimaryImage">
+                    <span asp-validation-for="PrimaryImage" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OtherImages">OtherImages</label>
+                    <input accept="image/*" asp-for="OtherImages" class="form-control" placeholder="OtherImages">
+                    <span asp-validation-for="OtherImages" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CategoryIds"></label>
+                    <select class="form-control" asp-for="CategoryIds" asp-items="@ViewBag.Categories">
+                        <option disabled selected>Select a category</option>
+                    </select>
+                    <span asp-validation-for="CategoryIds" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ColorIds"></label>
+                    <select class="form-control" asp-for="ColorIds" asp-items="@ViewBag.Colors">
+                        <option disabled selected>Select a color</option>
+                    </select>
+                    <span asp-validation-for="ColorIds" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TagIds"></label>
+                    <select class="form-control" asp-for="TagIds" asp-items="@ViewBag.Tags">
+                        <option disabled selected>Select a tag</option>
+                    </select>
+                    <span asp-validation-for="TagIds" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PFeatureIds"></label>
+                    <select class="form-control" asp-for="PFeatureIds" asp-items="@ViewBag.PFeatures">
+                        <option disabled selected>Select a feature</option>
+                    </select>
+                    <span asp-validation-for="PFeatureIds" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <a asp-action="Index" class="btn btn-light">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+

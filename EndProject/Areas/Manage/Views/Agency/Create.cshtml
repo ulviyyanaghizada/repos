@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+@model CreateAgencyVM
+<div class="content-wrapper">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Add Agency</h4>
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="FirstTitle">FirstTitle</label>
+                        <input asp-for="FirstTitle" class="form-control" id="exampleInputName1" placeholder="FirstTitle">
+                        <span asp-validation-for="FirstTitle" class="text-danger"></span>
+                    </div>
+                     <div class="form-group">
+                        <label asp-for="SecondTitle">SecondTitle</label>
+                        <input asp-for="SecondTitle" class="form-control" id="exampleInputName1" placeholder="SecondTitle">
+                        <span asp-validation-for="SecondTitle" class="text-danger"></span>
+                    </div>
+                     <div class="form-group">
+                        <label asp-for="ThirdTitle">ThirdTitle</label>
+                        <input asp-for="ThirdTitle" class="form-control" id="exampleInputName1" placeholder="ThirdTitle">
+                        <span asp-validation-for="ThirdTitle" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description">Description</label>
+                        <input asp-for="Description" class="form-control" id="exampleInputName1" placeholder="Description">
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Video">Video</label>
+                        <input asp-for="Video" class="form-control" id="exampleInputName1" placeholder="Video">
+                        <span asp-validation-for="Video" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image"></label>
+                        <input accept="image/" asp-for="Image" class="form-control" id="exampleInputName1" placeholder="Image">
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ImageCover"></label>
+                        <input accept="image/" asp-for="ImageCover" class="form-control" id="exampleInputName1" placeholder="ImageCover">
+                        <span asp-validation-for="ImageCover" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <a asp-action="Index" asp-controller="Agency" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

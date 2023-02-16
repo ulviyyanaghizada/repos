@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+@model CreateEmployeeVM
+<div class="content-wrapper">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">  Add Employee</h4>
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Surname"></label>
+                        <input asp-for="Surname" class="form-control" id="exampleInputName1" placeholder="Surname">
+                        <span asp-validation-for="Surname" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PhoneNumber"></label>
+                        <input asp-for="PhoneNumber" class="form-control" id="exampleInputName1" placeholder="PhoneNumber">
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div> 
+                    <div class="form-group">
+                        <label asp-for="About"></label>
+                        <input asp-for="About" class="form-control" id="exampleInputName1" placeholder="About">
+                        <span asp-validation-for="About" class="text-danger"></span>
+                    </div> 
+                    <div class="form-group">
+                        <label asp-for="Description"></label>
+                        <input asp-for="Description" class="form-control" id="exampleInputName1" placeholder="Description">
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div><div class="form-group">
+                        <label asp-for="Mail"></label>
+                        <input asp-for="Mail" class="form-control" id="exampleInputName1" placeholder="Mail">
+                        <span asp-validation-for="Mail" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FacebookLink"></label>
+                        <input asp-for="FacebookLink" class="form-control" id="exampleInputName1" placeholder="FacebookLink">
+                        <span asp-validation-for="FacebookLink" class="text-danger"></span>
+                    </div><div class="form-group">
+                        <label asp-for="InstagramLink"></label>
+                        <input asp-for="InstagramLink" class="form-control" id="exampleInputName1" placeholder="InstagramLink">
+                        <span asp-validation-for="InstagramLink" class="text-danger"></span>
+                    </div><div class="form-group">
+                        <label asp-for="TwitterLink"></label>
+                        <input asp-for="TwitterLink" class="form-control" id="exampleInputName1" placeholder="TwitterLink">
+                        <span asp-validation-for="TwitterLink" class="text-danger"></span>
+                    </div><div class="form-group">
+                        <label asp-for="YoutubeLink"></label>
+                        <input asp-for="YoutubeLink" class="form-control" id="exampleInputName1" placeholder="YoutubeLink">
+                        <span asp-validation-for="YoutubeLink" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image"></label>
+                        <input accept="image/" asp-for="Image" class="form-control" id="exampleInputName1" placeholder="Image">
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PositionId">Position</label>
+                        <select asp-for="PositionId" asp-items="@ViewBag.Positions">
+                            <option selected disabled> Select a position</option>
+                        </select>
+                        <span asp-validation-for="PositionId" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <a asp-action="Index" asp-controller="Employee" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

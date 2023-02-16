@@ -1,0 +1,123 @@
+﻿@model Dictionary<string,string>
+<header class="main-header">
+    <div class="header-top">
+        <div class="auto-container">
+            <div class="inner clearfix">
+                <div class="top-left clearfix">
+                    <ul class="info clearfix">
+                        <li><i class="icon fa fa-envelope"></i> <a href="~/assets/mailto:INFO@TREKER.COM">@Model["HeaderMail"]</a></li>
+                        <li><i class="icon fa fa-phone-circle"></i> <a href="~/assets/tel:+11256326501">@Model["HeaderNumber"]</a></li>
+                    </ul>
+                </div>
+                <div class="top-right clearfix">
+
+                    <div class="login"><i class="icon fa fa-user"></i> <a asp-controller="Account" asp-action="Login">SIGN IN</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header Upper -->
+    <div class="header-upper">
+        <div class="auto-container">
+            <!-- Main Box -->
+            <div class="main-box clearfix">
+                <!--Logo-->
+                <div class="logo-box">
+                    <div class="logo"><a href="index.html" title="Treker"><img src="~/assets/images/logo.svg" alt="" title="Treker"></a></div>
+                </div>
+
+                <div class="nav-box clearfix">
+                    <!--Nav Outer-->
+                    <div class="nav-outer clearfix">
+                        <nav class="main-menu">
+                            <ul class="navigation clearfix">
+                                <li class="current dropdown">
+                                    <a asp-controller="Home" asp-action="Index">Home</a>
+
+                                </li>
+                                <li class="dropdown">
+                                    <a asp-controller="About" asp-action="Index">About Us</a>
+                                    <ul>
+                                        <li><a asp-controller="OurTeam" asp-action="Index">Our Team</a></li>
+                                        <li><a asp-controller="FAQs" asp-action="Index">FAQ</a></li>
+                                        <li><a asp-controller="Gallery" asp-action="Index">Gallery</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a asp-controller="OurShop" asp-action="Index">Shop</a>
+                                    <ul>
+                                        <li><a asp-controller="OurShop" asp-action="Index">Our Shop</a></li>
+                                        <li><a asp-controller="ProductDetails" asp-action="Index">Product Details</a></li>
+                                        <li><a asp-controller="Wishlist" asp-action="Index">My Wishlist</a></li>
+                                        <li><a asp-controller="Cart" asp-action="Index">Shopping Cart</a></li>
+                                        <li><a asp-controller="CheckOut" asp-action="Index">Checkout</a></li>
+                                        <li><a asp-controller="Account" asp-action="Register">Signup</a></li>
+                                        <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                                        <li><a asp-controller="Account" asp-action="ForgotPassword">Forgot Password</a></li>
+                                    </ul>
+                                </li>
+                                <li><a asp-controller="Destinations" asp-action="Index">Destinations</a></li>
+                                <li><a asp-controller="Trekking" asp-action="Index">Trekking</a></li>
+                                <li class="dropdown">
+                                    <a href="#">Pages</a>
+                                    <ul>
+                                        <li><a asp-controller="Destinations2" asp-action="Index">Destinations 02</a></li>
+                                        <li><a asp-controller="Tours" asp-action="Index">Tours</a></li>
+                                        <li><a asp-controller="Packages" asp-action="Index">Packages</a></li>
+                                        <li><a asp-controller="Booking" asp-action="Index">Booking</a></li>
+                                        <li><a asp-controller="TermsAndConditions" asp-action="Index">Terms & Conditions</a></li>
+                                        <li><a asp-controller="Error" asp-action="Index">404 Page</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a asp-controller="OurBlog" asp-action="Index">News</a>
+                                    <ul>
+                                        <li><a asp-controller="OurBlog" asp-action="Index">Our Blog</a></li>
+                                        <li><a asp-controller="BlogClassic" asp-action="Index">Blog Classic</a></li>
+                                        <li><a asp-controller="BlogDetails" asp-action="Index">Blog Details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <!-- Main Menu End-->
+                    </div>
+                    <!--Nav Outer End-->
+
+                    <div class="links-box clearfix">
+                        <div class="link search-btn search-toggle"><span class="icon far fa-search"></span></div>
+                        <div class="link fav-btn"><a asp-controller="Wishlist" asp-action="Index"><span class="icon far fa-heart"></span><span class="count">02</span></a></div>
+                        <div class="link cart-btn"><a href="~/assets/#" class="clearfix"><div class="cart-info"><span class="icon far fa-shopping-cart"></span>00 Items</div><div class="amount">$ 00:00</div></a></div>
+                    </div>
+
+                    <!-- Hidden Nav Toggler -->
+                    <div class="nav-toggler">
+                        <button class="hidden-bar-opener"><span class="icon"><img src="~/assets/images/icons/menu-icon.svg" alt=""></span></button>
+                    </div>
+
+                </div>
+
+                <!-- End Header Upper -->
+                <div class="search-box">
+                    <div class="outer-container">
+                        <div class="inner-box">
+                            <div class="form-box">
+                                <div class="s-close-btn"><span class="icon far fa-times"></span></div>
+                                <span class="s-icon fa fa-search"></span>
+                                <form method="post" action="index.html">
+                                    <div class="form-group">
+                                        <input type="search" name="search" value="" placeholder="Search Here" required="">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+

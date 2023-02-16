@@ -1,0 +1,1041 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HomeVM
+
+    <!--Search Backdrop-->
+    <div class="search-backdrop"></div>
+
+
+    <!--Menu Backdrop-->
+    <div class="menu-backdrop"></div>
+
+    <!-- Hidden Navigation Bar -->
+    <section class="hidden-bar">
+        <!-- Hidden Bar Wrapper -->
+        <div class="hidden-bar-wrapper">
+            <div class="hidden-bar-closer"><span class="icon"><svg class="icon-close" role="presentation" viewBox="0 0 16 14"><path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path></svg></span></div>
+            <div class="nav-logo-box">
+                <div class="logo"><a href="~/assets/index.html" title="Treker"><img src="~/assets/images/logo.svg" alt="" title="Treker"></a></div>
+            </div>
+            <!-- .Side-menu -->
+            <div class="side-menu">
+                 <ul class="navigation clearfix">
+                    <li class="current dropdown"><a href="~/assets/index.html">Home</a>
+                        <ul>
+                            <li><a href="~/assets/index.html">Home 01</a></li>
+                            <li><a href="~/assets/index-2.html">Home 02</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="~/assets/about.html">About Us</a>
+                        <ul>
+                            <li><a href="~/assets/team.html">Our Team</a></li>
+                            <li><a href="~/assets/team-member.html">Team Member</a></li>
+                            <li><a href="~/assets/faq.html">FAQs</a></li>
+                            <li><a href="~/assets/gallery.html">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="~/assets/shop.html">Shop</a>
+                        <ul>
+                            <li><a href="~/assets/shop.html">Our Shop</a></li>
+                            <li><a href="~/assets/product-single.html">Product Details</a></li>
+                            <li><a href="~/assets/wishlist.html">My Wishlist</a></li>
+                            <li><a href="~/assets/shopping-cart.html">Shopping Cart</a></li>
+                            <li><a href="~/assets/checkout.html">Checkout</a></li>
+                            <li><a href="~/assets/signup.html">Signup</a></li>
+                            <li><a href="~/assets/login.html">Login</a></li>
+                            <li><a href="~/assets/reset-password.html">Forgot Password</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="~/assets/destinations.html">Destinations</a></li>
+                    <li><a href="~/assets/trekking.html">Trekking</a></li>
+                    <li class="dropdown"><a href="~/assets/#">Pages</a>
+                        <ul>
+                            <li><a href="~/assets/activities.html">Activities</a></li>
+                            <li><a href="~/assets/destinations-2.html">Destinations 02</a></li>
+                            <li><a href="~/assets/tours.html">Tours</a></li>
+                            <li><a href="~/assets/packages.html">Packages 01</a></li>
+                            <li><a href="~/assets/packages-2.html">Packages 02</a></li>
+                            <li><a href="~/assets/booking.html">Booking</a></li>
+                            <li><a href="~/assets/terms-conditions.html">Terms & Conditions</a></li>
+                            <li><a href="~/assets/error-page.html">404 Page</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="~/assets/blog.html">News</a>
+                        <ul>
+                            <li><a href="~/assets/blog.html">Our Blog</a></li>
+                            <li><a href="~/assets/blog-2.html">Blog Classic</a></li>
+                            <li><a href="~/assets/blog-single.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="~/assets/contact.html">Contact</a></li>
+                </ul>
+            </div><!-- /.Side-menu -->
+
+            <div class="links-box clearfix">
+                <div class="clearfix">
+                    <div class="link"><a href="~/assets/login.html" class="theme-btn btn-style-one"><span>Login<i class="icon far fa-angle-right"></i></span></a></div>
+                    <div class="link"><a href="~/assets/signup.html" class="theme-btn btn-style-two"><span>Sign Up<i class="icon far fa-angle-right"></i></span></a></div>
+                </div>
+            </div>
+
+        </div><!-- / Hidden Bar Wrapper -->
+    </section>
+    <!-- / Hidden Bar -->
+
+    <div class="cart-backdrop"></div>
+    <!--Cart Sidebar-->
+    <div class="cart-sidebar">
+        <div class="cart-side-inner">
+            <div class="cart-side-header">
+                <div class="closer-btn"><span>Close</span></div>
+                <h5>Shopping Cart</h5>
+            </div>
+            <div class="prod-box">
+                <div class="prod-block">
+                    <div class="prod-inner">
+                        <div class="prod-thumb"><a href="~/assets/#"><img src="~/assets/images/resource/shop/shop-thumb-1.jpg" alt=""></a></div>
+                        <div class="remove-item"><a href="~/assets/#"><i class="far fa-times"></i></a></div>
+                        <div class="prod-title"><a href="~/assets/#">Smart Air Bag Travel</a></div>
+                        <div class="quantity-box">
+                            <div class="item-quantity">
+                                <input class="qty-spinner" type="text" value="1" name="quantity">
+                            </div>
+                        </div>
+                        <div class="calculations">1 x <span>$225.00</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lower-content">
+            <div class="count clearfix">
+                <span class="ttl">Subtotal</span>
+                <span class="dtl">$225.00</span>
+            </div>
+            <div class="links clearfix">
+                <div class="left"><a href="~/assets/#" class="theme-btn btn-style-one"><span>View Cart</span></a></div>
+                <div class="right"><a href="~/assets/#" class="theme-btn btn-style-two"><span>Checkout</span></a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner Section -->
+    <section class="banner-two">
+
+        <div class="banner-container">
+            <div class="banner-slider-box">
+                <!--Slide Item-->
+                <div class="slide-item">
+                    <div class="floated-icon left"><img src="~/assets/images/main-slider/banner-stones-left.svg" alt="" title=""></div>
+                    <div class="floated-icon right"><img src="~/assets/images/main-slider/banner-stones-right.svg" alt="" title=""></div>
+                    <div class="bg-image-1"><img src="~/assets/images/main-slider/banner-image-4.svg" alt="" title=""></div>
+                    <div class="auto-container">
+                      <div class="content-box">
+                            <div class="bg-image-2"><img src="~/assets/images/main-slider/banner-image-3.svg" alt="" title=""></div>
+                            <div class="content">
+                                <div class="clearfix">
+                                    <div class="inner">
+                                        @foreach (var item in Model.Entries)
+                                    {
+                                        <h2>@item.Title</h2>
+                                        <h1><span>@item.Name</span></h1>
+                                        <div class="text">@item.Description</div>
+                                    }
+                                        
+                                        <div class="links-box clearfix">
+                                            <div class="link"><a asp-controller="Destinations" asp-action="Index" class="theme-btn btn-style-two"><span>View All Tours<i class="icon"><img src="~/assets/images/icons/logo-icon.svg" alt="" title=""></i></span></a></div>
+                                            <div class="link"><a asp-controller="TermsAndConditions" asp-action="Index" class="theme-btn btn-style-one"><span>Read More<i class="icon far fa-angle-right"></i></span></a></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="banner-image">
+                                <div class="image"><img src="~/assets/images/main-slider/banner-image-2.svg" alt="" title=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--End Banner Section -->
+
+    <!--Why Section-->
+    <section class="why-two">
+        <div class="auto-container">
+
+            <div class="title-box centered">
+                <div class="subtitle">We Are Awesome</div>
+                <h2><i class="bg-vector"></i><span>Why Choose Treker</span></h2>
+            </div>
+
+            <div class="content-box">
+                <div class="row clearfix">
+                    @foreach (var item in Model.Chooses)
+                {
+                     <div class="why-block-two col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="icon-box"><img src="~/assets/images/resource/@item.ImageUrl" alt=""></div>
+                            <h4>@item.Title</h4>
+                            <div class="text">@item.Description</div>
+                        </div>
+                    </div>
+                }
+                 
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--About Us Section-->
+    <section class="about-two">
+        <div class="bg-layer" style="background-image: url(~/assets/images/background/pattern-1.png);"></div>
+        <div class="floated-icon left"><img src="~/assets/images/resource/about-stone-two.svg" alt="" title=""></div>
+        <div class="auto-container">
+            <div class="row clearfix">
+                <!--Text Col-->
+                @foreach (var item in Model.Agencies)
+            {
+                <div class="text-col col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
+                        <div class="title-box">
+                            <div class="subtitle">About Treker</div>
+                            <h2><i class="bg-vector"></i><span>World Best Travel Agency</span></h2>
+                            <div class="text">@item.Description</div>
+                        </div>
+                        <div class="lower-box">
+                            <div class="lower-inner clearfix">
+                                <div class="text-content">
+                                    <ul>
+                                        <li>@item.FirstTitle</li>
+                                        <li>@item.SecondTitle</li>
+                                        <li>@item.ThirdTitle</li>
+                                    </ul>
+                                </div>
+                                <div class="image-box">
+                                    <img src="~/assets/images/@item.ImageUrl" alt="" title="">
+                                <a href="~/assets/@item.Video" class="theme-btn lightbox-image overlink"><span class="icon fa fa-play"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+                
+                <!--Image Col-->
+                @foreach (var item in Model.Agencies)
+            {
+                
+                <div class="image-col col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="0ms">
+                        <div class="image">
+                            <img src="~/assets/images/@item.ImageCoverUrl" alt="" title="">
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+        </div>
+    </section>
+
+    <!--Trending Destinations Section-->
+    <section class="trending-two">
+        <div class="auto-container">
+
+            <div class="title-box">
+                <div class="subtitle">Top Destinations</div>
+                <h2><i class="bg-vector"></i><span>Trending Destinations</span></h2>
+            </div>
+
+            <div class="carousel-box">
+                <div class="trending-carousel owl-theme owl-carousel">
+                    <!--Block-->
+                    <div class="dest-block-two">
+                        <div class="inner-box">
+                            <div class="image-box"><a href="~/assets/#"><img src="~/assets/images/resource/gallery-7.jpg" alt=""></a></div>
+                            <div class="hvr-box">
+                                <div class="cap-box">
+                                    <div class="cap-inner clearfix">
+                                        <h4><a href="~/assets/#">Rajasthan</a></h4>
+                                        <div class="tour-count"><span>15 Tours</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Block-->
+                    <div class="dest-block-two">
+                        <div class="inner-box">
+                            <div class="image-box"><a href="~/assets/#"><img src="~/assets/images/resource/gallery-8.jpg" alt=""></a></div>
+                            <div class="hvr-box">
+                                <div class="cap-box">
+                                    <div class="cap-inner clearfix">
+                                        <h4><a href="~/assets/#">Rajasthan</a></h4>
+                                        <div class="tour-count"><span>15 Tours</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Block-->
+                    <div class="dest-block-two">
+                        <div class="inner-box">
+                            <div class="image-box"><a href="~/assets/#"><img src="~/assets/images/resource/gallery-9.jpg" alt=""></a></div>
+                            <div class="hvr-box">
+                                <div class="cap-box">
+                                    <div class="cap-inner clearfix">
+                                        <h4><a href="~/assets/#">Rajasthan</a></h4>
+                                        <div class="tour-count"><span>15 Tours</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Block-->
+                    <div class="dest-block-two">
+                        <div class="inner-box">
+                            <div class="image-box"><a href="~/assets/#"><img src="~/assets/images/resource/gallery-7.jpg" alt=""></a></div>
+                            <div class="hvr-box">
+                                <div class="cap-box">
+                                    <div class="cap-inner clearfix">
+                                        <h4><a href="~/assets/#">Rajasthan</a></h4>
+                                        <div class="tour-count"><span>15 Tours</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Block-->
+                    <div class="dest-block-two">
+                        <div class="inner-box">
+                            <div class="image-box"><a href="~/assets/#"><img src="~/assets/images/resource/gallery-8.jpg" alt=""></a></div>
+                            <div class="hvr-box">
+                                <div class="cap-box">
+                                    <div class="cap-inner clearfix">
+                                        <h4><a href="~/assets/#">Rajasthan</a></h4>
+                                        <div class="tour-count"><span>15 Tours</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Block-->
+                    <div class="dest-block-two">
+                        <div class="inner-box">
+                            <div class="image-box"><a href="~/assets/#"><img src="~/assets/images/resource/gallery-9.jpg" alt=""></a></div>
+                            <div class="hvr-box">
+                                <div class="cap-box">
+                                    <div class="cap-inner clearfix">
+                                        <h4><a href="~/assets/#">Rajasthan</a></h4>
+                                        <div class="tour-count"><span>15 Tours</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Products Section-->
+    <section class="products-section">
+        <div class="floated-icon left"><img src="~/assets/images/resource/stones-left.svg" alt="" title=""></div>
+        <div class="floated-icon right"><img src="~/assets/images/resource/stones-right.svg" alt="" title=""></div>
+        <div class="auto-container">
+
+            <div class="title-box centered">
+                <div class="subtitle">Shop Now</div>
+                <h2><i class="bg-vector"></i><span>Featured Trekking Products</span></h2>
+            </div>
+
+            <div class="row clearfix">
+                <!--Block-->
+                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-1.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                            <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="~/assets/#">Smart Air Bag Travel</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Block-->
+                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-2.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                        <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="~/assets/#">Travel Suitcase Bag</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Block-->
+                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-3.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                            <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="~/assets/#">Travel Light Suitcase</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Block-->
+                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-4.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                            <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="~/assets/#">Smart Travel Gadgets</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Block-->
+                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-5.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                            <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="~/assets/#">Set of Black Silk Pillow</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Block-->
+                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-6.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                            <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="~/assets/#">Travel Slipping Support</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Block-->
+                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-7.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                            <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="~/assets/#">Travelling Black Suitcase</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Block-->
+                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-8.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                        <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="~/assets/#">Coffee Travel Mug</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="see-more-link"><a asp-controller="OurShop" asp-action="Index" class="theme-btn btn-style-one"><span>View All Products <i class="icon"><img src="~/assets/images/icons/logo-icon.svg" alt="" title=""></i></span></a></div>
+        </div>
+    </section>
+
+    <!--Popular Section-->
+    <section class="popular-section style-two">
+        <div class="bg-layer" style="background-image: url(images/background/image-4.jpg);"></div>
+        <div class="auto-container">
+            <div class="title-box centered">
+                <div class="subtitle">Modern & Beautiful</div>
+                <h2><i class="bg-vector"></i><span>Our Most Popular Trekking</span></h2>
+            </div>
+            <div class="carousel-box">
+                <div class="popular-carousel owl-theme owl-carousel">
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/f-image-1.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>$120</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="~/assets/#">Moscow Red City Land</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="~/assets/#">05 Review</a></div>
+                                </div>
+                                <div class="text">Richly varied landscapes, luxurious accommodation and a wide range of wild experiences await you. </div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="~/assets/#" class="theme-btn"><span>View Details <i class="icon"><img src="~/assets/images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="~/assets/#" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/f-image-2.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>$120</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="~/assets/#">Yellowstone & Mt Rushm</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="~/assets/#">05 Review</a></div>
+                                </div>
+                                <div class="text">Richly varied landscapes, luxurious accommodation and a wide range of wild experiences await you. </div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="~/assets/#" class="theme-btn"><span>View Details <i class="icon"><img src="~/assets/images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="~/assets/#" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/f-image-3.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>$120</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="~/assets/#">Los Angeles to San Franc</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="~/assets/#">05 Review</a></div>
+                                </div>
+                                <div class="text">Richly varied landscapes, luxurious accommodation and a wide range of wild experiences await you. </div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="~/assets/#" class="theme-btn"><span>View Details <i class="icon"><img src="~/assets/images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="~/assets/#" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/f-image-1.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>$120</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="~/assets/#">Moscow Red City Land</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="~/assets/#">05 Review</a></div>
+                                </div>
+                                <div class="text">Richly varied landscapes, luxurious accommodation and a wide range of wild experiences await you. </div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="~/assets/#" class="theme-btn"><span>View Details <i class="icon"><img src="~/assets/images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="~/assets/#" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/f-image-2.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>$120</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="~/assets/#">Yellowstone & Mt Rushm</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="~/assets/#">05 Review</a></div>
+                                </div>
+                                <div class="text">Richly varied landscapes, luxurious accommodation and a wide range of wild experiences await you. </div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="~/assets/#" class="theme-btn"><span>View Details <i class="icon"><img src="~/assets/images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="~/assets/#" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/f-image-3.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>$120</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="~/assets/#">Los Angeles to San Franc</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="~/assets/#">05 Review</a></div>
+                                </div>
+                                <div class="text">Richly varied landscapes, luxurious accommodation and a wide range of wild experiences await you. </div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="~/assets/#" class="theme-btn"><span>View Details <i class="icon"><img src="~/assets/images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="~/assets/#" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/f-image-1.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>$120</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="~/assets/#">Moscow Red City Land</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="~/assets/#">05 Review</a></div>
+                                </div>
+                                <div class="text">Richly varied landscapes, luxurious accommodation and a wide range of wild experiences await you. </div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="~/assets/#" class="theme-btn"><span>View Details <i class="icon"><img src="~/assets/images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="~/assets/#" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/f-image-2.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>$120</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="~/assets/#">Yellowstone & Mt Rushm</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="~/assets/#">05 Review</a></div>
+                                </div>
+                                <div class="text">Richly varied landscapes, luxurious accommodation and a wide range of wild experiences await you. </div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="~/assets/#" class="theme-btn"><span>View Details <i class="icon"><img src="~/assets/images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="~/assets/#" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/f-image-3.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>$120</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="~/assets/#">Los Angeles to San Franc</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="~/assets/#">05 Review</a></div>
+                                </div>
+                                <div class="text">Richly varied landscapes, luxurious accommodation and a wide range of wild experiences await you. </div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="~/assets/#" class="theme-btn"><span>View Details <i class="icon"><img src="~/assets/images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="~/assets/#" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!--Testimonials Section-->
+    <section class="testimonials-one">
+    <div class="bg-layer" style="background-image: url(~/assets/images/background/image-3.jpg);"></div>
+        <div class="auto-container">
+            <div class="title-box centered">
+                <div class="subtitle">Review & Testimonial</div>
+                <h2><i class="bg-vector"></i><span>Top Reviews for Treker</span></h2>
+            </div>
+            <div class="carousel-box">
+                <div class="testi-carousel owl-theme owl-carousel">
+                    <!--Testi Block-->
+                    <div class="testi-block">
+                        <div class="inner-box">
+                        <div class="icon"><img src="~/assets/images/icons/quotes-1.svg" alt=""></div>
+                            <div class="image"><img src="~/assets/images/resource/testi-thumb-1.jpg" alt=""></div>
+                            <div class="text">Fight School has specialized in martial arts since 1986 and has one of the most Fight School has specialized.</div>
+                            <div class="info">
+                                <div class="name">Randall Schwartz</div>
+                                <div class="clearfix">
+                                    <div class="designation">Women's Trainner</div>
+                                    <div class="rating"><div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Testi Block-->
+                    <div class="testi-block">
+                        <div class="inner-box">
+                            <div class="icon"><img src="~/assets/images/icons/quotes-1.svg" alt=""></div>
+                            <div class="image"><img src="~/assets/images/resource/testi-thumb-2.jpg" alt=""></div>
+                            <div class="text">We teach martial arts because we love it — not because we want to make money on you. Unlike other martial.</div>
+                            <div class="info">
+                                <div class="name">Andru Smith</div>
+                                <div class="clearfix">
+                                    <div class="designation">Boxing Trainer</div>
+                                    <div class="rating"><div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Testi Block-->
+                      <div class="testi-block">
+                        <div class="inner-box">
+                        <div class="icon"><img src="~/assets/images/icons/quotes-1.svg" alt=""></div>
+                            <div class="image"><img src="~/assets/images/resource/testi-thumb-1.jpg" alt=""></div>
+                            <div class="text">Fight School has specialized in martial arts since 1986 and has one of the most Fight School has specialized.</div>
+                            <div class="info">
+                                <div class="name">Randall Schwartz</div>
+                                <div class="clearfix">
+                                    <div class="designation">Women's Trainner</div>
+                                    <div class="rating"><div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Testi Block-->
+                    <div class="testi-block">
+                        <div class="inner-box">
+                        <div class="icon"><img src="~/assets/images/icons/quotes-1.svg" alt=""></div>
+                            <div class="image"><img src="~/assets/images/resource/testi-thumb-1.jpg" alt=""></div>
+                            <div class="text">Fight School has specialized in martial arts since 1986 and has one of the most Fight School has specialized.</div>
+                            <div class="info">
+                                <div class="name">Randall Schwartz</div>
+                                <div class="clearfix">
+                                    <div class="designation">Women's Trainner</div>
+                                    <div class="rating"><div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Testi Block-->
+                    <div class="testi-block">
+                        <div class="inner-box">
+                        <div class="icon"><img src="~/assets/images/icons/quotes-1.svg" alt=""></div>
+                        <div class="image"><img src="~/assets/images/resource/testi-thumb-2.jpg" alt=""></div>
+                            <div class="text">We teach martial arts because we love it — not because we want to make money on you. Unlike other martial.</div>
+                            <div class="info">
+                                <div class="name">Andru Smith</div>
+                                <div class="clearfix">
+                                    <div class="designation">Boxing Trainer</div>
+                                    <div class="rating"><div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Testi Block-->
+                <div class="testi-block">
+                    <div class="inner-box">
+                        <div class="icon"><img src="~/assets/images/icons/quotes-1.svg" alt=""></div>
+                        <div class="image"><img src="~/assets/images/resource/testi-thumb-1.jpg" alt=""></div>
+                        <div class="text">Fight School has specialized in martial arts since 1986 and has one of the most Fight School has specialized.</div>
+                        <div class="info">
+                            <div class="name">Randall Schwartz</div>
+                            <div class="clearfix">
+                                <div class="designation">Women's Trainner</div>
+                                <div class="rating"><div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Sponsors Section-->
+    <section class="sponsors-one style-two">
+        <div class="bg-layer" style="background-image: url(images/background/image-5.png);"></div>
+        <div class="auto-container">
+            <div class="carousel-box">
+                <div class="sponsors-carousel owl-theme owl-carousel">
+                    <!--Block-->
+                   @foreach (var item in Model.Brands)
+                {
+                     <div class="sponsor-block">
+                        <div class="inner-box">
+                            <div class="image"><a href="~/assets/#"><img src="~/assets/images/brand/@item.ImageUrl" alt=""></a></div>
+                        </div>
+                    </div>
+                }
+
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--News Section-->
+    <section class="news-section">
+        <div class="floated-icon left"><img src="~/assets/images/resource/stones-left.svg" alt="" title=""></div>
+    <div class="floated-icon right"><img src="~/assets/images/resource/stones-right.svg" alt="" title=""></div>
+    <div class="bg-layer" style="background-image: url(~/assets/images/background/image-1.jpg);"></div>
+        <div class="auto-container">
+            <div class="title-box centered">
+                <div class="subtitle">Treker Top News</div>
+                <h2><i class="bg-vector"></i><span>Treker Latest News</span></h2>
+            </div>
+            <div class="content-box">
+                <div class="row clearfix">
+                    <!--Block-->
+                    <div class="news-block-one col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <div class="image-box">
+                            <div class="image"><a href="blog-single.html"><img src="~/assets/images/resource/news-1.jpg" alt="" title=""></a></div>
+                                <div class="cat"><span>Trekking</span></div>
+                            </div>
+                            <div class="lower-content">
+                                <div class="info">
+                                    <span class="i-block">By : Sword Joy</span> &ensp; | &ensp; <span class="i-block">20 March 2022</span>
+                                </div>
+                                <h4><a href="blog-single.html">THE UPCOMING WBC CHAMP SHIPS 2022 in feb</a></h4>
+                                <div class="text">Fight School has specialized in martial arts since 1986 and has one of the most innovative.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="news-block-one alternate col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <div class="lower-content">
+                                <div class="info">
+                                    <span class="i-block">By : Sword Joy</span> &ensp; | &ensp; <span class="i-block">20 March 2022</span>
+                                </div>
+                                <h4><a href="blog-single.html">THE BEST BOXERS IN THEIR WEIGH Target CATEGOR</a></h4>
+                                <div class="text">Fight School has specialized in martial arts since 1986 and has one of the most innovative.</div>
+                            </div>
+                            <div class="image-box">
+                            <div class="image"><a href="blog-single.html"><img src="~/assets/images/resource/news-2.jpg" alt="" title=""></a></div>
+                                <div class="cat"><span>Trekking</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="news-block-one col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <div class="image-box">
+                            <div class="image"><a href="blog-single.html"><img src="~/assets/images/resource/news-3.jpg" alt="" title=""></a></div>
+                                <div class="cat"><span>Trekking</span></div>
+                            </div>
+                            <div class="lower-content">
+                                <div class="info">
+                                    <span class="i-block">By : Sword Joy</span> &ensp; | &ensp; <span class="i-block">20 March 2022</span>
+                                </div>
+                                <h4><a href="blog-single.html">EFFECTIVE STRATEGIES & TIPS FROM THE BEST</a></h4>
+                                <div class="text">Fight School has specialized in martial arts since 1986 and has one of the most innovative.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Subscribe Section-->
+    <section class="subscribe-section">
+        
+        <div class="auto-container">
+            <div class="content-box">
+                <div class="bg-layer" style="background-image: url(~/assets/images/background/newsletter-bg.png);"></div>
+                <div class="row clearfix">
+                    <div class="image-col col-xl-5 col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner">
+                        <div class="image"><img src="~/assets/images/resource/newsletter-image.svg" alt=""></div>
+                        </div>
+                    </div>
+
+                    <div class="text-col col-xl-7 col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner">
+                            <div class="title">
+                                <div class="subtitle">Newsletter</div>
+                                <h2>SUBSCRIBE NOW</h2>
+                                <div class="text">Fight School has specialized in martial arts since 1986 and has one of the most innovative programs in the nation.</div>
+                            </div>
+                            <div class="form-box subscribe-form">
+                                <form method="post" action="index.html">
+                                    <div class="form-group">
+                                        <div class="field-inner">
+                                            <span class="icon alt-icon far fa-envelope"></span>
+                                            <input type="email" name="email" value="" placeholder="Email Address">
+                                        </div>
+                                        <button type="submit" class="theme-btn btn-style-one"><span>SUBSCRIBE <i class="icon fa fa-paper-plane"></i></span></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   

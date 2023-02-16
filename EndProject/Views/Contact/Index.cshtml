@@ -1,0 +1,291 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HomeVM
+<!--Search Backdrop-->
+<div class="search-backdrop"></div>
+
+
+<!--Menu Backdrop-->
+<div class="menu-backdrop"></div>
+
+<!-- Hidden Navigation Bar -->
+<section class="hidden-bar">
+    <!-- Hidden Bar Wrapper -->
+    <div class="hidden-bar-wrapper">
+        <div class="hidden-bar-closer"><span class="icon"><svg class="icon-close" role="presentation" viewBox="0 0 16 14"><path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path></svg></span></div>
+        <div class="nav-logo-box">
+            <div class="logo"><a href="~/assets/index.html" title="Treker"><img src="~/assets/images/logo.svg" alt="" title="Treker"></a></div>
+        </div>
+        <!-- .Side-menu -->
+        <div class="side-menu">
+            <ul class="navigation clearfix">
+                <li class="dropdown">
+                    <a href="~/assets/index.html">Home</a>
+                    <ul>
+                        <li><a href="~/assets/index.html">Home 01</a></li>
+                        <li><a href="~/assets/index-2.html">Home 02</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="~/assets/about.html">About Us</a>
+                    <ul>
+                        <li><a href="~/assets/team.html">Our Team</a></li>
+                        <li><a href="~/assets/team-member.html">Team Member</a></li>
+                        <li><a href="~/assets/faq.html">FAQs</a></li>
+                        <li><a href="~/assets/gallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="~/assets/shop.html">Shop</a>
+                    <ul>
+                        <li><a href="~/assets/shop.html">Our Shop</a></li>
+                        <li><a href="~/assets/product-single.html">Product Details</a></li>
+                        <li><a href="~/assets/wishlist.html">My Wishlist</a></li>
+                        <li><a href="~/assets/shopping-cart.html">Shopping Cart</a></li>
+                        <li><a href="~/assets/checkout.html">Checkout</a></li>
+                        <li><a href="~/assets/signup.html">Signup</a></li>
+                        <li><a href="~/assets/login.html">Login</a></li>
+                        <li><a href="~/assets/reset-password.html">Forgot Password</a></li>
+                    </ul>
+                </li>
+                <li><a href="~/assets/destinations.html">Destinations</a></li>
+                <li><a href="~/assets/trekking.html">Trekking</a></li>
+                <li class="dropdown">
+                    <a href="~/assets/#">Pages</a>
+                    <ul>
+                        <li><a href="~/assets/activities.html">Activities</a></li>
+                        <li><a href="~/assets/destinations-2.html">Destinations 02</a></li>
+                        <li><a href="~/assets/tours.html">Tours</a></li>
+                        <li><a href="~/assets/packages.html">Packages 01</a></li>
+                        <li><a href="~/assets/packages-2.html">Packages 02</a></li>
+                        <li><a href="~/assets/booking.html">Booking</a></li>
+                        <li><a href="~/assets/terms-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="~/assets/error-page.html">404 Page</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="~/assets/blog.html">News</a>
+                    <ul>
+                        <li><a href="~/assets/blog.html">Our Blog</a></li>
+                        <li><a href="~/assets/blog-2.html">Blog Classic</a></li>
+                        <li><a href="~/assets/blog-single.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li class="current"><a href="~/assets/contact.html">Contact</a></li>
+            </ul>
+        </div><!-- /.Side-menu -->
+
+        <div class="links-box clearfix">
+            <div class="clearfix">
+                <div class="link"><a href="~/assets/login.html" class="theme-btn btn-style-one"><span>Login<i class="icon far fa-angle-right"></i></span></a></div>
+                <div class="link"><a href="~/assets/signup.html" class="theme-btn btn-style-two"><span>Sign Up<i class="icon far fa-angle-right"></i></span></a></div>
+            </div>
+        </div>
+
+    </div><!-- / Hidden Bar Wrapper -->
+</section>
+<!-- / Hidden Bar -->
+
+<div class="cart-backdrop"></div>
+<!--Cart Sidebar-->
+<div class="cart-sidebar">
+    <div class="cart-side-inner">
+        <div class="cart-side-header">
+            <div class="closer-btn"><span>Close</span></div>
+            <h5>Shopping Cart</h5>
+        </div>
+        <div class="prod-box">
+            <div class="prod-block">
+                <div class="prod-inner">
+                    <div class="prod-thumb"><a href="~/assets/#"><img src="~/assets/images/resource/shop/shop-thumb-1.jpg" alt=""></a></div>
+                    <div class="remove-item"><a href="~/assets/#"><i class="far fa-times"></i></a></div>
+                    <div class="prod-title"><a href="~/assets/#">Smart Air Bag Travel</a></div>
+                    <div class="quantity-box">
+                        <div class="item-quantity">
+                            <input class="qty-spinner" type="text" value="1" name="quantity">
+                        </div>
+                    </div>
+                    <div class="calculations">1 x <span>$225.00</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lower-content">
+        <div class="count clearfix">
+            <span class="ttl">Subtotal</span>
+            <span class="dtl">$225.00</span>
+        </div>
+        <div class="links clearfix">
+            <div class="left"><a href="~/assets/#" class="theme-btn btn-style-one"><span>View Cart</span></a></div>
+            <div class="right"><a href="~/assets/#" class="theme-btn btn-style-two"><span>Checkout</span></a></div>
+        </div>
+    </div>
+</div>
+
+<!-- Banner Section -->
+<section class="inner-banner">
+    <div class="image-layer" style="background-image: url(images/background/banner-image-1.jpg);"></div>
+    <div class="auto-container">
+        <div class="content-box">
+            <h2>Contact</h2>
+            <div class="bread-crumb">
+                <ul class="clearfix">
+                    <li><span class="icon-home fa fa-home"></span><a href="~/assets/index.html">Home</a></li>
+                    <li class="current">Contact</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Banner Section -->
+<!--Contact Section-->
+<section class="contact-section">
+    <div class="floated-icon right"><img src="~/assets/images/resource/stones-right-3.svg" alt="" title=""></div>
+    <div class="floated-icon right-2"><img src="~/assets/images/resource/stones-right-2.svg" alt="" title=""></div>
+    <div class="auto-container">
+
+        <div class="info-section">
+            <div class="row clearfix">
+                <!--Block-->
+                @foreach (var item in Model.ContinentInfos)
+                {
+                    
+                <div class="info-block col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="map-icon"><img src="~/assets/images/@item.ImageUrl" alt="" title=""></div>
+                        <h5>@item.Name</h5>
+                        <div class="address text">@item.Title</div>
+                        <div class="phone"><a href="~/assets/tel:+4402036715709">@item.Number</a></div>
+                    </div>
+                </div>
+                }
+                
+            </div>
+        </div>
+        <div class="title-box centered">
+            <h2><span>How can we Help?</span></h2>
+            <div class="text">Contact us and get strapped in for a better adventure experience in your life-time. Just look for opportunity to be with nature. </div>
+        </div>
+        <div class="form-box site-form">
+            <div class="contact-form">
+                <form method="post" action="contact.html">
+                    <div class="row clearfix">
+                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <div class="f-label">Your Name <i>*</i></div>
+                            <div class="field-inner">
+                                <input type="text" name="fieldname" value="" placeholder="" required>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <div class="f-label">Your Email <i>*</i></div>
+                            <div class="field-inner">
+                                <input type="email" name="fieldname" value="" placeholder="" required>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <div class="f-label">Your Phone <i>*</i></div>
+                            <div class="field-inner">
+                                <input type="text" name="fieldname" value="" placeholder="" required>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                            <div class="f-label">Your Subject <i>*</i></div>
+                            <div class="field-inner">
+                                <input type="text" name="fieldname" value="" placeholder="" required>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                            <div class="f-label">Write Message</div>
+                            <div class="field-inner">
+                                <textarea name="fieldname" placeholder=""></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                            <button type="submit" class="theme-btn btn-style-two"><span>Submit Now<i class="icon far fa-angle-right"></i></span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Find Us Section-->
+<section class="find-us">
+    <div class="floated-icon left"><img src="~/assets/images/resource/stones-left.svg" alt="" title=""></div>
+    <div class="floated-icon right"><img src="~/assets/images/resource/floated-icon-right-2.svg" alt="" title=""></div>
+    <div class="auto-container">
+        <div class="title-box centered">
+            <h2><span>Find Our Office on Map</span></h2>
+            <div class="text">Contact us and get strapped in for a better adventure experience in your life-time. Just look for opportunity to be with nature. </div>
+        </div>
+        <div class="row clearfix">
+            <!--Text Col-->
+            <div class="map-col col-lg-6 col-md-12 col-sm-12">
+                <div class="inner wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
+                    <div class="map">
+                        <div class="map-image"><img src="~/assets/images/resource/world-map.svg" alt="" title=""></div>
+                        <div class="loc-point loc-1">
+                            <div class="loc-icon"><img src="~/assets/images/icons/loc-hover.svg" alt="" title=""></div>
+                            <div class="loc-popup">
+                                <div class="text">Canada</div>
+                                <div class="link"><a href="https://www.google.com/maps/place/Canada/56,-96,3z/data=!3m1!4b1!4m5!3m4!1s0x4b0d03d337cc6ad9:0x9968b72aa2438fa5!8m2!3d56.130366!4d-106.346771">View on Map</a></div>
+                            </div>
+                        </div>
+                        <div class="loc-point loc-2">
+                            <div class="loc-icon"><img src="~/assets/images/icons/loc-hover.svg" alt="" title=""></div>
+                            <div class="loc-popup">
+                                <div class="text">New Zealand</div>
+                                <div class="link"><a href="https://www.google.com/maps/place/New+Zealand/data=!4m2!3m1!1s0x6d2c200e17779687:0xb1d618e2756a4733?sa=X&ved=2ahUKEwi36tCl05f9AhWEOXoKHaOfClcQ8gF6BAh3EAE">View on Map</a></div>
+                            </div>
+                        </div>
+                        <div class="loc-point loc-3">
+                            <div class="loc-icon"><img src="~/assets/images/icons/loc-hover.svg" alt="" title=""></div>
+                            <div class="loc-popup">
+                                <div class="text">Afrika</div>
+                                <div class="link"><a href="https://www.google.com/maps/place/Africa/data=!4m2!3m1!1s0x10a06c0a948cf5d5:0x108270c99e90f0b3?sa=X&ved=2ahUKEwib99jQ05f9AhXUSvEDHU3_DSMQ8gF6BAhoEAI">View on Map</a></div>
+                            </div>
+                        </div>
+                        <div class="loc-point loc-4">
+                            <div class="loc-icon"><img src="~/assets/images/icons/loc-hover.svg" alt="" title=""></div>
+                            <div class="loc-popup">
+                                <div class="text">China</div>
+                                <div class="link"><a href="https://www.google.com/maps/place/China/data=!4m2!3m1!1s0x31508e64e5c642c1:0x951daa7c349f366f?sa=X&ved=2ahUKEwizuNf005f9AhW4SvEDHfgyDcgQ8gF6BAh4EAE">View on Map</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Text Col-->
+            <div class="text-col col-lg-6 col-md-12 col-sm-12">
+                <div class="inner wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="0ms">
+                    <div class="accordion-box clearfix">
+                        <!--Block-->
+                        @foreach (var item in Model.OfficeMaps)
+                        {
+                            
+                        <div class="accordion block active-block">
+                            <div class="acc-btn active">@item.Title <i class="fa-regular fa-angle-down"></i></div>
+                            <div class="acc-content">
+                                <div class="content">
+                                    <div class="text">@item.Description</div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="map-section">
+    <!--Map Box-->
+    <div class="map-box">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.443278930481!2d55.30389370154939!3d25.25566963673736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43254acb00ad%3A0xdbc6ee1faaf3a3c6!2sBank%20Street%20Building%20-%20UBL%20Buidling%20Bur%20Dubai%2C%20Dubai%20-%20D79%20-%20Al%20Mankhool%20-%20Dubai!5e0!3m2!1sen!2sae!4v1636553029034!5m2!1sen!2sae" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+</section>
+

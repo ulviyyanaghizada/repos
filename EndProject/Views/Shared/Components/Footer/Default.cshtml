@@ -1,0 +1,76 @@
+﻿@model Dictionary<string,string>
+<footer class="footer-two">
+    <div class="bg-layer" style="background-image: url(~/assets/images/background/footer-bg.png);"></div>
+    <div class="upper-section">
+        <div class="auto-container">
+
+            <div class="row clearfix">
+
+                <div class="footer-column col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                    <!--Logo-->
+                    <div class="footer-logo">
+                        <div class="logo"><a href="~/assets/index.html" title="Treker"><img src="~/assets/images/logo.svg" alt="" title="Treker"></a></div>
+                    </div>
+                    <div class="footer-text">@Model["FooterDescription"]</div>
+                    <div class="social-links">
+                        <ul class="clearfix">
+                            <li><a href="@Model["FacebookLink"]"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="@Model["TwitterLink"]"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="@Model["YoutubeLink"]"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="@Model["InstagramLink"]"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="big-column col-xl-8 col-lg-12 col-md-12 col-sm-12">
+                    <div class="row clearfix">
+
+                        <div class="footer-column col-lg-3 col-md-4 col-sm-12">
+                            <h6>Exlopre Treker</h6>
+                            <div class="links">
+                                <ul>
+                                    <li><a asp-controller="Account" asp-action="Register">Account</a></li>
+                                    <li><a asp-controller="Wishlist" asp-action="Index">Wishlist</a></li>
+                                    <li><a asp-controller="Cart" asp-action="Index">Shopping Cart</a></li>
+                                    <li><a asp-controller="CheckOut" asp-action="Index">Checkout</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="footer-column col-lg-3 col-md-4 col-sm-12">
+                            <h6>Quick lInks</h6>
+                            <div class="links">
+                                <ul>
+                                    <li><a asp-controller="CheckOut" asp-action="Index">About us</a></li>
+                                    <li><a asp-controller="TermsAndConditions" asp-action="Index">Terms & Conditions</a></li>
+                                    <li><a asp-controller="OurBlog" asp-action="Index">Blog</a></li>
+                                    <li><a asp-controller="FAQs" asp-action="Index">FAQ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-block col-lg-6 col-md-4 col-sm-12">
+                            <h6>Address</h6>
+                            <div class="info">
+                                <ul>
+                                    <li>@Model["FooterAdress"] <a href="tel:+44(0)2036715709">@Model["HeaderNumber"]</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="f-bottom">
+        <div class="auto-container">
+            <div class="inner clearfix">
+                <div class="copyright">Designed by UlviyyaNagh</div>
+            </div>
+        </div>
+    </div>
+
+</footer>

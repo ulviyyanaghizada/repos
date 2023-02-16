@@ -1,0 +1,448 @@
+﻿@using EndProject.Models;
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HomeVM
+
+
+<!--Search Backdrop-->
+<div class="search-backdrop"></div>
+
+
+<!--Menu Backdrop-->
+<div class="menu-backdrop"></div>
+
+<!-- Hidden Navigation Bar -->
+<section class="hidden-bar">
+    <!-- Hidden Bar Wrapper -->
+    <div class="hidden-bar-wrapper">
+        <div class="hidden-bar-closer"><span class="icon"><svg class="icon-close" role="presentation" viewBox="0 0 16 14"><path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path></svg></span></div>
+        <div class="nav-logo-box">
+            <div class="logo"><a href="~/assets/index.html" title="Treker"><img src="~/assets/images/logo.svg" alt="" title="Treker"></a></div>
+        </div>
+        <!-- .Side-menu -->
+        <div class="side-menu">
+            <ul class="navigation clearfix">
+                <li class="dropdown">
+                    <a href="~/assets/index.html">Home</a>
+                    <ul>
+                        <li><a href="~/assets/index.html">Home 01</a></li>
+                        <li><a href="~/assets/index-2.html">Home 02</a></li>
+                    </ul>
+                </li>
+                <li class="current dropdown">
+                    <a href="~/assets/about.html">About Us</a>
+                    <ul>
+                        <li><a href="~/assets/team.html">Our Team</a></li>
+                        <li><a href="~/assets/team-member.html">Team Member</a></li>
+                        <li><a href="~/assets/faq.html">FAQs</a></li>
+                        <li><a href="~/assets/gallery.html">Gallery</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="~/assets/shop.html">Shop</a>
+                    <ul>
+                        <li><a href="~/assets/shop.html">Our Shop</a></li>
+                        <li><a href="~/assets/product-single.html">Product Details</a></li>
+                        <li><a href="~/assets/wishlist.html">My Wishlist</a></li>
+                        <li><a href="~/assets/shopping-cart.html">Shopping Cart</a></li>
+                        <li><a href="~/assets/checkout.html">Checkout</a></li>
+                        <li><a href="~/assets/signup.html">Signup</a></li>
+                        <li><a href="~/assets/login.html">Login</a></li>
+                        <li><a href="~/assets/reset-password.html">Forgot Password</a></li>
+                    </ul>
+                </li>
+                <li><a href="~/assets/destinations.html">Destinations</a></li>
+                <li><a href="~/assets/trekking.html">Trekking</a></li>
+                <li class="dropdown">
+                    <a href="~/assets/#">Pages</a>
+                    <ul>
+                        <li><a href="~/assets/activities.html">Activities</a></li>
+                        <li><a href="~/assets/destinations-2.html">Destinations 02</a></li>
+                        <li><a href="~/assets/tours.html">Tours</a></li>
+                        <li><a href="~/assets/packages.html">Packages 01</a></li>
+                        <li><a href="~/assets/packages-2.html">Packages 02</a></li>
+                        <li><a href="~/assets/booking.html">Booking</a></li>
+                        <li><a href="~/assets/terms-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="~/assets/error-page.html">404 Page</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="~/assets/blog.html">News</a>
+                    <ul>
+                        <li><a href="~/assets/blog.html">Our Blog</a></li>
+                        <li><a href="~/assets/blog-2.html">Blog Classic</a></li>
+                        <li><a href="~/assets/blog-single.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="~/assets/contact.html">Contact</a></li>
+            </ul>
+        </div><!-- /.Side-menu -->
+
+        <div class="links-box clearfix">
+            <div class="clearfix">
+                <div class="link"><a href="~/assets/login.html" class="theme-btn btn-style-one"><span>Login<i class="icon far fa-angle-right"></i></span></a></div>
+                <div class="link"><a href="~/assets/signup.html" class="theme-btn btn-style-two"><span>Sign Up<i class="icon far fa-angle-right"></i></span></a></div>
+            </div>
+        </div>
+
+    </div><!-- / Hidden Bar Wrapper -->
+</section>
+<!-- / Hidden Bar -->
+
+<div class="cart-backdrop"></div>
+<!--Cart Sidebar-->
+<div class="cart-sidebar">
+    <div class="cart-side-inner">
+        <div class="cart-side-header">
+            <div class="closer-btn"><span>Close</span></div>
+            <h5>Shopping Cart</h5>
+        </div>
+        <div class="prod-box">
+            <div class="prod-block">
+                <div class="prod-inner">
+                    <div class="prod-thumb"><a href="~/assets/#"><img src="~/assets/images/resource/shop/shop-thumb-1.jpg" alt=""></a></div>
+                    <div class="remove-item"><a href="~/assets/#"><i class="far fa-times"></i></a></div>
+                    <div class="prod-title"><a href="~/assets/#">Smart Air Bag Travel</a></div>
+                    <div class="quantity-box">
+                        <div class="item-quantity">
+                            <input class="qty-spinner" type="text" value="1" name="quantity">
+                        </div>
+                    </div>
+                    <div class="calculations">1 x <span>$225.00</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lower-content">
+        <div class="count clearfix">
+            <span class="ttl">Subtotal</span>
+            <span class="dtl">$225.00</span>
+        </div>
+        <div class="links clearfix">
+            <div class="left"><a href="~/assets/#" class="theme-btn btn-style-one"><span>View Cart</span></a></div>
+            <div class="right"><a href="~/assets/#" class="theme-btn btn-style-two"><span>Checkout</span></a></div>
+        </div>
+    </div>
+</div>
+
+<!-- Banner Section -->
+<section class="inner-banner">
+    <div class="image-layer" style="background-image: url(images/background/banner-image-1.jpg);"></div>
+    <div class="auto-container">
+        <div class="content-box">
+            <h2>FAQ</h2>
+            <div class="bread-crumb">
+                <ul class="clearfix">
+                    <li><span class="icon-home fa fa-home"></span><a href="~/assets/index.html">Home</a></li>
+                    <li class="current">FAQ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Banner Section -->
+<!--FAQs Section-->
+<section class="faq-two">
+    <div class="floated-icon left"><img src="~/assets/images/resource/stones-left.svg" alt="" title=""></div>
+    <div class="floated-icon right"><img src="~/assets/images/resource/stones-right.svg" alt="" title=""></div>
+    <div class="auto-container">
+        <div class="title-box centered">
+            <h2><span>Frequently asked question</span></h2>
+            <div class="text">Since 2014, we’ve helped more than 500,000 people of all ages enjoy the best outdoor experience of their lives. Whether it’s for one day or a two-week vacation, close to home or a foreign land.</div>
+        </div>
+        <div class="tabs-box">
+            <ul class="tab-buttons clearfix">
+                <li class="tab-btn active-btn" data-tab="#tab-1"><span>All</span></li>
+                <li class="tab-btn" data-tab="#tab-2"><span>activities</span></li>
+                <li class="tab-btn" data-tab="#tab-3"><span>Destinations</span></li>
+                <li class="tab-btn" data-tab="#tab-4"><span>Tours</span></li>
+            </ul>
+            <div class="tabs-content">
+                <!--Tab-->
+                <div class="tab active-tab" id="tab-1">
+                    <div class="tab-inner">
+                        <div class="row clearfix">
+
+                            <div class="text-col col-lg-6 col-md-12 col-sm-12">
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>How to pay an online travel reservation ?</h5>
+                                        </div>
+                                        <div class="text">will specify the damages that one party our store owner, will be obligated to provide to the other customer, in the event of product failure and should reflect the level of risk involved</div>
+                                    </div>
+                                </div>
+
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>Which currency do we accept in your agency ?</h5>
+                                        </div>
+                                        <div class="text">First of all we are delivery some country Duis finibus, nibh eu dignissim laoreet, odio augue gravida elit, sed sollicitudin ipsum mauris at eros. Vivamus cursus some country Duis finibus</div>
+                                    </div>
+                                </div>
+
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>How can you become your external partner ?</h5>
+                                        </div>
+                                        <div class="text">First of all we are delivery some country Duis finibus, nibh eu dignissim laoreet, odio augue gravida elit, sed sollicitudin ipsum id commodo ex convallis nec. Cras convallis dictum sapien.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-col col-lg-6 col-md-12 col-sm-12">
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>How to became a VIP customer in your agency ?</h5>
+                                        </div>
+                                        <div class="text">will specify the damages that one party our store owner, will be obligated to provide to the other customer, in the event of product failure and should reflect the level of risk involved</div>
+                                    </div>
+                                </div>
+
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>How can I change my money for my next holiday ?</h5>
+                                        </div>
+                                        <div class="text">First of all we are delivery some country Duis finibus, nibh eu dignissim laoreet, odio augue gravida elit, sed sollicitudin ipsum mauris at eros. Vivamus cursus some country Duis finibus</div>
+                                    </div>
+                                </div>
+
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>Do you have any affiliate program for children ?</h5>
+                                        </div>
+                                        <div class="text">First of all we are delivery some country Duis finibus, nibh eu dignissim laoreet, odio augue gravida elit, sed sollicitudin ipsum id commodo ex convallis nec. Cras convallis dictum sapien.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Tab-->
+                <div class="tab" id="tab-2">
+                    <div class="tab-inner">
+                        <div class="row clearfix">
+
+                            <div class="text-col col-lg-6 col-md-12 col-sm-12">
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>How to pay an online travel reservation ?</h5>
+                                        </div>
+                                        <div class="text">will specify the damages that one party our store owner, will be obligated to provide to the other customer, in the event of product failure and should reflect the level of risk involved</div>
+                                    </div>
+                                </div>
+
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>Which currency do we accept in your agency ?</h5>
+                                        </div>
+                                        <div class="text">First of all we are delivery some country Duis finibus, nibh eu dignissim laoreet, odio augue gravida elit, sed sollicitudin ipsum mauris at eros. Vivamus cursus some country Duis finibus</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-col col-lg-6 col-md-12 col-sm-12">
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>How to became a VIP customer in your agency ?</h5>
+                                        </div>
+                                        <div class="text">will specify the damages that one party our store owner, will be obligated to provide to the other customer, in the event of product failure and should reflect the level of risk involved</div>
+                                    </div>
+                                </div>
+
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>How can I change my money for my next holiday ?</h5>
+                                        </div>
+                                        <div class="text">First of all we are delivery some country Duis finibus, nibh eu dignissim laoreet, odio augue gravida elit, sed sollicitudin ipsum mauris at eros. Vivamus cursus some country Duis finibus</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Tab-->
+                <div class="tab" id="tab-3">
+                    <div class="tab-inner">
+                        <div class="row clearfix">
+
+                            <div class="text-col col-lg-6 col-md-12 col-sm-12">
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>How to pay an online travel reservation ?</h5>
+                                        </div>
+                                        <div class="text">will specify the damages that one party our store owner, will be obligated to provide to the other customer, in the event of product failure and should reflect the level of risk involved</div>
+                                    </div>
+                                </div>
+
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>Which currency do we accept in your agency ?</h5>
+                                        </div>
+                                        <div class="text">First of all we are delivery some country Duis finibus, nibh eu dignissim laoreet, odio augue gravida elit, sed sollicitudin ipsum mauris at eros. Vivamus cursus some country Duis finibus</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-col col-lg-6 col-md-12 col-sm-12">
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>How to became a VIP customer in your agency ?</h5>
+                                        </div>
+                                        <div class="text">will specify the damages that one party our store owner, will be obligated to provide to the other customer, in the event of product failure and should reflect the level of risk involved</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Tab-->
+                <div class="tab" id="tab-4">
+                    <div class="tab-inner">
+                        <div class="row clearfix">
+
+                            <div class="text-col col-lg-6 col-md-12 col-sm-12">
+
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>How can you become your external partner ?</h5>
+                                        </div>
+                                        <div class="text">First of all we are delivery some country Duis finibus, nibh eu dignissim laoreet, odio augue gravida elit, sed sollicitudin ipsum id commodo ex convallis nec. Cras convallis dictum sapien.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-col col-lg-6 col-md-12 col-sm-12">
+                                <!--Block-->
+                                <div class="faq-block">
+                                    <div class="inner">
+                                        <div class="title">
+                                            <h5>How to became a VIP customer in your agency ?</h5>
+                                        </div>
+                                        <div class="text">will specify the damages that one party our store owner, will be obligated to provide to the other customer, in the event of product failure and should reflect the level of risk involved</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--FAQs Section-->
+<section class="faq-one alternate">
+    <div class="auto-container">
+        <div class="title-box centered">
+            <h2><span>Most frequent question</span></h2>
+        </div>
+        <div class="row clearfix">
+            <!--Text Col-->
+            <div class="text-col col-lg-6 col-md-12 col-sm-12">
+                <div class="inner wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
+                    <div class="accordion-box clearfix">
+                        <!--Block-->
+                        @for (int i = 0; i < (Model.MostFrequents.Count()/2) ; i++)
+                        {
+                            <div class="accordion block active-block">
+                                <div class="acc-btn active">@Model.MostFrequents[i].Title<i class="fa-regular fa-angle-down"></i></div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <div class="text">@Model.MostFrequents[i].Description</div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+            <!--Text Col-->
+           <div class="text-col col-lg-6 col-md-12 col-sm-12">
+                <div class="inner wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="0ms">
+                    <div class="accordion-box clearfix">
+
+                        @for (int i = Model.MostFrequents.Count() / 2; i < Model.MostFrequents.Count(); i++)
+                        {
+                            <div class="accordion block active-block">
+                                <div class="acc-btn active">@Model.MostFrequents[i].Title<i class="fa-regular fa-angle-down"></i></div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <div class="text">@Model.MostFrequents[i].Description</div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Sponsors Section-->
+<section class="sponsors-one">
+    <div class="auto-container">
+        <div class="carousel-box">
+            <div class="sponsors-carousel owl-theme owl-carousel">
+                <!--Block-->
+                @foreach (Brand item in Model.Brands)
+                {
+                    <div class="sponsor-block">
+                        <div class="inner-box">
+                            <div class="image"><a href="~/assets/#"><img src="~/assets/images/brand/@item.ImageUrl" alt=""></a></div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

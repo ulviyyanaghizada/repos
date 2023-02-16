@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<Agency>
+<div class="content-wrapper">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Agency </h4>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Image</th>
+                                <th>Cover Image</th>
+                                <th>First Title</th>
+                                <th>Second Title</th>
+                                <th>Third Title</th>
+                                <th>Description</th>
+                                <th>Video</th>
+                                <th colspan="2">Operations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td class="py-1">
+                                        <img width="40" src="~/assets/images/@item.ImageUrl" alt="image" />
+                                    </td>
+                                    <td class="py-1">
+                                        <img width="40" src="~/assets/images/@item.ImageCoverUrl" alt="image" />
+                                    </td>
+                                    <td>@item.FirstTitle</td>
+                                    <td>@item.SecondTitle</td>
+                                    <td>@item.ThirdTitle</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.Video</td>
+                                    <td><a asp-action="Delete" asp-route-id="@item.Id" asp-controller="Agency" class="btn btn-danger ">Delete</a></td>
+                                    <td><a asp-action="Update" asp-route-id="@item.Id" asp-controller="Agency" class="btn btn-success">Update</a></td>
+                                </tr>
+
+                            }
+                        </tbody>
+                        <nav aria-label="...">
+                            <ul class="pagination pagination-sm">
+                                @if (ViewBag.CurrentPage > 1)
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link" asp-action="Index" asp-route-page="@(ViewBag.CurrentPage-1)" tabindex="-1">Previous</a>
+                                    </li>
+                                }
+                                @for (int i = 1; i <= ViewBag.MaxPageCount; i++)
+                                {
+                                    <li class="page-item @(ViewBag.CurrentPage==i?"disabled":"")">
+                                        <a class="page-link" asp-action="Index" asp-route-page="@i" tabindex="-1">@i</a>
+                                    </li>
+                                }
+                                @if (ViewBag.CurrentPage < ViewBag.MaxPageCount)
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link" asp-action="Index" asp-route-page="@(ViewBag.CurrentPage+1)" tabindex="-1">Next</a>
+                                    </li>
+                                }
+                            </ul>
+                        </nav>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
