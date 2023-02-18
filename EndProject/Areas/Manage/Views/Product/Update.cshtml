@@ -34,16 +34,16 @@
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
                 <div class="form-group">
+                    <label asp-for="PrimaryImage">PrimaryImage</label>
+                    <input accept="image/*" asp-for="PrimaryImage" class="form-control" placeholder="PrimaryImage">
+                    <span asp-validation-for="PrimaryImage" class="text-danger"></span>
+                </div>
+                <div class="form-group">
                     <label asp-for="OtherImages">New Other Images</label>
                     <input accept="image/*" asp-for="OtherImages" class="form-control" placeholder="OtherImages">
                     <span asp-validation-for="OtherImages" class="text-danger"></span>
                 </div>
 
-                <div class="form-group">
-                    <h3>Cover Image</h3>
-                    <img width="150" height="200" src="~/assets/images/product/@Model.ProductImages" />
-                </div>
-                
                 <div class="form-group">
                     <label asp-for="CategoryIds"></label>
                     <select class="form-control" asp-for="CategoryIds" asp-items="@ViewBag.Categories">
@@ -67,7 +67,7 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="PFeatureIds"></label>
-                    <select class="form-control" asp-for="PFeatureIds" asp-items="@ViewBag.PFeature">
+                    <select class="form-control" asp-for="PFeatureIds" asp-items="@ViewBag.PFeatures">
                         <option disabled selected>Select a feature</option>
                     </select>
                     <span asp-validation-for="PFeatureIds" class="text-danger"></span>

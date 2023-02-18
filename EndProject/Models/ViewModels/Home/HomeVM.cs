@@ -3,7 +3,7 @@
     public class HomeVM
     {
         public IEnumerable<Entry> Entries { get; set; }
-        public IEnumerable<Choose> Chooses { get; set; }
+        public List<Choose> Chooses { get; set; }
         public IEnumerable<Agency> Agencies { get; set; }
         public IEnumerable<Brand> Brands { get; set; }
         public ICollection<Employee> Employees { get; set; }

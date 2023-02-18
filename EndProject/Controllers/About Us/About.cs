@@ -18,7 +18,8 @@ namespace EndProject.Controllers.About_Us
         {
             HomeVM home = new HomeVM
             {
-                Employees = _context.Employees.Include(e => e.Position).ToList()
+                Employees = _context.Employees.Include(e => e.Position).ToList(),
+                Chooses = _context.Chooses.ToList()
             };
 
             return View(home);

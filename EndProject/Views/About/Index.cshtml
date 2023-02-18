@@ -252,53 +252,36 @@
         <div class="row clearfix">
             <div class="left-col col-xl-3 col-lg-4 col-md-6 col-sm-12">
                 <div class="inner">
+                    @for (int i = Model.Chooses.Count() / 2; i < Model.Chooses.Count(); i++)
+                    {
                     <div class="why-block">
                         <div class="inner-box">
-                            <div class="icon-box"><img src="~/assets/images/resource/icon-1.svg" alt=""></div>
-                            <h4>Diverse Destinations</h4>
-                            <div class="text">Richly varied landscapes, luxury accommodation Travel.</div>
+                                <div class="icon-box"><img src="~/assets/images/resource/@Model.Chooses[i].ImageUrl" alt=""></div>
+                                <h4>@Model.Chooses[i].Title</h4>
+                            <div class="text">@Model.Chooses[i].Description</div>
                         </div>
                     </div>
-                    <div class="why-block">
-                        <div class="inner-box">
-                            <div class="icon-box"><img src="~/assets/images/resource/icon-2.svg" alt=""></div>
-                            <h4>Value for Money</h4>
-                            <div class="text">Richly varied landscapes, luxury accommodation Travel.</div>
-                        </div>
-                    </div>
-                    <div class="why-block">
-                        <div class="inner-box">
-                            <div class="icon-box"><img src="~/assets/images/resource/icon-3.svg" alt=""></div>
-                            <h4>Beautiful Places</h4>
-                            <div class="text">Richly varied landscapes, luxury accommodation Travel.</div>
-                        </div>
-                    </div>
+                        
+                    }
+                    
+                    
                 </div>
             </div>
 
             <div class="right-col col-xl-3 col-lg-4 col-md-6 col-sm-12">
                 <div class="inner">
+                    
+                    @for (int i = Model.Chooses.Count() / 2; i < Model.Chooses.Count(); i++)
+                    {
                     <div class="why-block">
                         <div class="inner-box">
-                            <div class="icon-box"><img src="~/assets/images/resource/icon-4.svg" alt=""></div>
-                            <h4>Fast Booking</h4>
-                            <div class="text">Richly varied landscapes, luxury accommodation Travel.</div>
+                                <div class="icon-box"><img src="~/assets/images/resource/@Model.Chooses[i].ImageUrl" alt=""></div>
+                                <h4>@Model.Chooses[i].Title</h4>
+                            <div class="text">@Model.Chooses[i].Description</div>
                         </div>
                     </div>
-                    <div class="why-block">
-                        <div class="inner-box">
-                            <div class="icon-box"><img src="~/assets/images/resource/icon-5.svg" alt=""></div>
-                            <h4>Support Team</h4>
-                            <div class="text">Richly varied landscapes, luxury accommodation Travel.</div>
-                        </div>
-                    </div>
-                    <div class="why-block">
-                        <div class="inner-box">
-                            <div class="icon-box"><img src="~/assets/images/resource/icon-6.svg" alt=""></div>
-                            <h4>Passionate Travel</h4>
-                            <div class="text">Richly varied landscapes, luxury accommodation Travel.</div>
-                        </div>
-                    </div>
+                        
+                    }
                 </div>
             </div>
 

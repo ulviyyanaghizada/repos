@@ -33,8 +33,7 @@ namespace EndProject.Areas.Manage.Controllers
             if (id is null || id == 0) return BadRequest();
             Product exist = _context.Products.Include(p => p.ProductCategories)
                 .Include(p => p.ProductTags).Include(p => p.ProductColors)
-                .Include(p => p.ProductImages).Include(p => p.ProductFeatures).FirstOrDefault(p => p.Id == id);
-
+                .Include(p => p.ProductImages).Include(p=>p.ProductFeatures).FirstOrDefault(p => p.Id == id);
             if (exist is null) return NotFound();
             foreach (ProductImage image in exist.ProductImages)
             {
@@ -43,9 +42,10 @@ namespace EndProject.Areas.Manage.Controllers
             _context.ProductColors.RemoveRange(exist.ProductColors);
             _context.ProductTags.RemoveRange(exist.ProductTags);
             _context.ProductCategories.RemoveRange(exist.ProductCategories);
-            _context.ProductImages.RemoveRange(exist.ProductImages);
             _context.ProductFeatures.RemoveRange(exist.ProductFeatures);
-            _context.SaveChanges();
+            _context.ProductImages.RemoveRange(exist.ProductImages);
+			_context.Products.Remove(exist);
+			_context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
 
@@ -229,10 +229,12 @@ namespace EndProject.Areas.Manage.Controllers
                     break;
                 }
             }
-            var otherImgs = updateProduct.OtherImages ?? new List<IFormFile>();
-            foreach (var image in otherImgs)
+			var primaryImg = updateProduct.PrimaryImage;
+			var otherImgs = updateProduct.OtherImages ?? new List<IFormFile>();
+			string result = primaryImg?.CheckValidate("image/", 600);
+			foreach (var image in otherImgs)
             {
-                var result = image.CheckValidate("image/", 600);
+                result = image.CheckValidate("image/", 600);
                 if (result?.Length > 0)
                 {
                     ModelState.AddModelError("OtherImages", result);
@@ -313,13 +315,28 @@ namespace EndProject.Areas.Manage.Controllers
 
 
             List<ProductImage> images = new List<ProductImage>();
-            
-            foreach (var item in otherImgs)
+
+			if (primaryImg != null)
+			{
+				var oldCover = product.ProductImages.FirstOrDefault(pi => pi.IsPrimary == true);
+				_context.ProductImages.Remove(oldCover);
+				oldCover.ImageUrl.DeleteFile(_env.WebRootPath, "assets/images/product");
+				images.Add(new ProductImage
+				{
+					ImageUrl = primaryImg.SaveFile(Path.Combine(_env.WebRootPath, "assets", "images", "product")),
+					IsPrimary = true,
+					Product = product
+				});
+			}
+
+
+			foreach (var item in otherImgs)
             {
                 images.Add(new ProductImage
                 {
                     ImageUrl = item?.SaveFile(Path.Combine(_env.WebRootPath, "assets", "images", "product")),
-                    Product = product
+					IsPrimary = null,
+					Product = product
                 });
             }
             var delete = updateProduct.ImageIds;

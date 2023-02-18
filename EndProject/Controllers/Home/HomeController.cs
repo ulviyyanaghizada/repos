@@ -19,7 +19,7 @@ namespace EndProject.Controllers.Home
             HomeVM home = new HomeVM { 
 
                 Entries = _context.Entries , 
-                Chooses = _context.Chooses,
+                Chooses = _context.Chooses.ToList(),
                 Agencies=_context.Agencies,
                 Brands=_context.Brands
             

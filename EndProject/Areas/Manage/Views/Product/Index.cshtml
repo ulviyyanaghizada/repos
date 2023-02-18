@@ -34,7 +34,7 @@
 							<td>@p.CostPrice</td>
 							<td>@p.SellPrice</td>
 							<td>
-								@foreach (var feature in p?.ProductFeatures.Where(pc => pc.PFeatureId == p.Id))
+								@foreach (var feature in p?.ProductFeatures.Where(pc => pc.ProductId == p.Id))
 								{
 									<span>@feature.PFeature.Title</span>
 								}
