@@ -278,9 +278,9 @@ namespace EndProject.Areas.Manage.Controllers
                     _context.ProductTags.Remove(item);
                 }
             }
-            foreach (var sizeId in updateProduct.TagIds)
+            foreach (var tagId in updateProduct.TagIds)
             {
-                _context.ProductTags.Add(new ProductTag { Product = product, TagId = sizeId });
+                _context.ProductTags.Add(new ProductTag { Product = product, TagId = tagId });
             }
             foreach (var item in product.ProductCategories)
             {

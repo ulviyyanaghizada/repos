@@ -1,4 +1,5 @@
 ﻿using EndProject.Models;
+using EndProject.Models.AllTourInfo;
 using Microsoft.EntityFrameworkCore;
 
 namespace EndProject.DAL
@@ -28,5 +29,22 @@ namespace EndProject.DAL
         public DbSet<ContinentInfo> ContinentInfos { get; set; }
         public DbSet<MostAnswer> MostAnswers { get; set; }
         public DbSet<Condition> Conditions { get; set; }
+        public DbSet<TCategory> TCategories { get; set; }
+        public DbSet<Continent> Continents { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Hotel> Hotels { get; set; }
+        public DbSet<HotelRoom> HotelRooms { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<TFacilitie> TFacilities { get; set; }
+        public DbSet<TFeature> TFeatures { get; set; }
+        public DbSet<Tour> Tours { get; set; }
+        public DbSet<TourCategory> TourCategories { get; set; }
+        public DbSet<TourDay> TourDays { get; set; }
+        public DbSet<TourDaysImage> TourDaysImages { get; set; }
+        public DbSet<TourFacilitie> TourFacilities { get; set; }
+        public DbSet<TourFeature> TourFeatures { get; set; }
+        public DbSet<TourImage> TourImages { get; set; }
+      //  public DbSet<Trekking> Trekking { get; set; }
+
     }
 }

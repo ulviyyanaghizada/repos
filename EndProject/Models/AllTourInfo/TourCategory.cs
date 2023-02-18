@@ -6,7 +6,7 @@ namespace EndProject.Models.AllTourInfo
     {
         public int TourId { get; set; }
         public Tour? Tour { get; set; }
-        public int CategoryId { get; set; }
-        public Category? Category { get; set; }
+        public int TCategoryId { get; set; }
+        public TCategory? TCategory { get; set; }
     }
 }

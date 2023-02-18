@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<Hotel>
+<div class="content-wrapper">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Choose </h4>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Meal Description</th>
+                                <th>BreakFast</th>
+                                <th>Lunch</th>
+                                <th>Supper</th>
+                                <th>rooms</th>
+                                <th colspan="2">Operations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td class="py-1">
+                                        <img src="~/assets/images/resource/@item.ImageUrl" alt="image" />
+                                    </td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.MealDescription</td>
+                                    <td>@item?.BreakFast</td>
+                                    <td>@item?.Lunch</td>
+                                    <td>@item?.Supper</td>
+                                    <td>
+								        @foreach (var room in item?.HotelRooms.Where(hr => hr.HotelId == item.Id))
+								        {
+									        <span>@room.Room.Name</span>
+							            }
+							        </td>
+                                    <td><a asp-action="Delete" asp-route-id="@item.Id" asp-controller="Hotel" class="btn btn-danger">Delete</a></td>
+                                    <td><a asp-action="Update" asp-route-id="@item.Id" asp-controller="Hotel" class="btn btn-success">Update</a></td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

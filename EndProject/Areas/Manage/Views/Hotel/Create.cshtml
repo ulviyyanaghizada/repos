@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+@model CreateHotelVM
+<div class="content-wrapper">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">  Add Hotel</h4>
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MealDescription"></label>
+                        <input asp-for="MealDescription" class="form-control" id="exampleInputName1" placeholder="MealDescription">
+                        <span asp-validation-for="MealDescription" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description"></label>
+                        <input asp-for="Description" class="form-control" id="exampleInputName1" placeholder="Description">
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>   
+                    <div class="form-group">
+                        <label asp-for="BreakFast"></label>
+                        <input asp-for="BreakFast" class="form-control" id="exampleInputName1" placeholder="BreakFast">
+                        <span asp-validation-for="BreakFast" class="text-danger"></span>
+                    </div>   
+                    <div class="form-group">
+                        <label asp-for="Lunch"></label>
+                        <input asp-for="Lunch" class="form-control" id="exampleInputName1" placeholder="Lunch">
+                        <span asp-validation-for="Lunch" class="text-danger"></span>
+                    </div>   
+                    <div class="form-group">
+                        <label asp-for="Supper"></label>
+                        <input asp-for="Supper" class="form-control" id="exampleInputName1" placeholder="Supper">
+                        <span asp-validation-for="Supper" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="RoomIds"></label>
+                        <select class="form-control" asp-for="RoomIds" asp-items="@ViewBag.Rooms">
+                            <option disabled selected>Select a room</option>
+                        </select>
+                        <span asp-validation-for="RoomIds" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image"></label>
+                        <input accept="image/" asp-for="Image" class="form-control" id="exampleInputName1" placeholder="Image">
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <a asp-action="Index" asp-controller="Hotel" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

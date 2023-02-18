@@ -2,7 +2,7 @@
 
 namespace EndProject.Models.AllTourInfo
 {
-    public class Category:BaseNameEntity
+    public class TCategory:BaseNameEntity
     {
         public ICollection<TourCategory>? TourCategories { get; set; }
     }

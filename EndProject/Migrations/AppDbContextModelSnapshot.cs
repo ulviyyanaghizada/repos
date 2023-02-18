@@ -63,6 +63,380 @@ namespace EndProject.Migrations
                     b.ToTable("Agencies");
                 });
 
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.Continent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Continents");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.Country", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ContinentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContinentId");
+
+                    b.ToTable("Countries");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.Hotel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BreakFast")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Lunch")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MealDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Supper")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Hotels");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.HotelRoom", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("HotelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoomId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HotelId");
+
+                    b.HasIndex("RoomId");
+
+                    b.ToTable("HotelRooms");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.Room", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Rooms");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TCategories");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TFacilitie", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("IconUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TFacilities");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TFeature", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TFeatures");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.Tour", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte>("GroupSize")
+                        .HasColumnType("tinyint");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VideoUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CountryId");
+
+                    b.ToTable("Tours");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TourCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("TCategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TourId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TCategoryId");
+
+                    b.HasIndex("TourId");
+
+                    b.ToTable("TourCategories");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TourDay", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("HotelId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TourId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HotelId");
+
+                    b.HasIndex("TourId");
+
+                    b.ToTable("TourDays");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TourDaysImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("IsPrimary")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("TourDayId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TourDayId");
+
+                    b.ToTable("TourDaysImages");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TourFacilitie", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("TFacilitieId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TourId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TFacilitieId");
+
+                    b.HasIndex("TourId");
+
+                    b.ToTable("TourFacilities");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TourFeature", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("TFeatueId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TFeatureId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TourId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TFeatureId");
+
+                    b.HasIndex("TourId");
+
+                    b.ToTable("TourFeatures");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TourImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("IsPrimary")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("TourId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TourId");
+
+                    b.ToTable("TourImages");
+                });
+
             modelBuilder.Entity("EndProject.Models.Brand", b =>
                 {
                     b.Property<int>("Id")
@@ -556,6 +930,143 @@ namespace EndProject.Migrations
                     b.ToTable("Tags");
                 });
 
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.Country", b =>
+                {
+                    b.HasOne("EndProject.Models.AllTourInfo.Continent", "Continent")
+                        .WithMany("Countries")
+                        .HasForeignKey("ContinentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Continent");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.HotelRoom", b =>
+                {
+                    b.HasOne("EndProject.Models.AllTourInfo.Hotel", "Hotel")
+                        .WithMany("HotelRooms")
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EndProject.Models.AllTourInfo.Room", "Room")
+                        .WithMany("HotelRooms")
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Hotel");
+
+                    b.Navigation("Room");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.Tour", b =>
+                {
+                    b.HasOne("EndProject.Models.AllTourInfo.Country", "Country")
+                        .WithMany("Tours")
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Country");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TourCategory", b =>
+                {
+                    b.HasOne("EndProject.Models.AllTourInfo.TCategory", "TCategory")
+                        .WithMany("TourCategories")
+                        .HasForeignKey("TCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EndProject.Models.AllTourInfo.Tour", "Tour")
+                        .WithMany("TourCategories")
+                        .HasForeignKey("TourId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TCategory");
+
+                    b.Navigation("Tour");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TourDay", b =>
+                {
+                    b.HasOne("EndProject.Models.AllTourInfo.Hotel", "Hotel")
+                        .WithMany("TourDays")
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EndProject.Models.AllTourInfo.Tour", "Tour")
+                        .WithMany("TourDays")
+                        .HasForeignKey("TourId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Hotel");
+
+                    b.Navigation("Tour");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TourDaysImage", b =>
+                {
+                    b.HasOne("EndProject.Models.AllTourInfo.TourDay", "TourDay")
+                        .WithMany("TourDaysImages")
+                        .HasForeignKey("TourDayId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TourDay");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TourFacilitie", b =>
+                {
+                    b.HasOne("EndProject.Models.AllTourInfo.TFacilitie", "TFacilitie")
+                        .WithMany("TourFacilities")
+                        .HasForeignKey("TFacilitieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EndProject.Models.AllTourInfo.Tour", "Tour")
+                        .WithMany("TourFacilities")
+                        .HasForeignKey("TourId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TFacilitie");
+
+                    b.Navigation("Tour");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TourFeature", b =>
+                {
+                    b.HasOne("EndProject.Models.AllTourInfo.TFeature", "TFeature")
+                        .WithMany("TourFeatures")
+                        .HasForeignKey("TFeatureId");
+
+                    b.HasOne("EndProject.Models.AllTourInfo.Tour", "Tour")
+                        .WithMany("TourFeatures")
+                        .HasForeignKey("TourId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TFeature");
+
+                    b.Navigation("Tour");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TourImage", b =>
+                {
+                    b.HasOne("EndProject.Models.AllTourInfo.Tour", "Tour")
+                        .WithMany("TourImages")
+                        .HasForeignKey("TourId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Tour");
+                });
+
             modelBuilder.Entity("EndProject.Models.Employee", b =>
                 {
                     b.HasOne("EndProject.Models.Position", "Position")
@@ -652,6 +1163,61 @@ namespace EndProject.Migrations
                     b.Navigation("Product");
 
                     b.Navigation("Tag");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.Continent", b =>
+                {
+                    b.Navigation("Countries");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.Country", b =>
+                {
+                    b.Navigation("Tours");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.Hotel", b =>
+                {
+                    b.Navigation("HotelRooms");
+
+                    b.Navigation("TourDays");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.Room", b =>
+                {
+                    b.Navigation("HotelRooms");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TCategory", b =>
+                {
+                    b.Navigation("TourCategories");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TFacilitie", b =>
+                {
+                    b.Navigation("TourFacilities");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TFeature", b =>
+                {
+                    b.Navigation("TourFeatures");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.Tour", b =>
+                {
+                    b.Navigation("TourCategories");
+
+                    b.Navigation("TourDays");
+
+                    b.Navigation("TourFacilities");
+
+                    b.Navigation("TourFeatures");
+
+                    b.Navigation("TourImages");
+                });
+
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.TourDay", b =>
+                {
+                    b.Navigation("TourDaysImages");
                 });
 
             modelBuilder.Entity("EndProject.Models.Category", b =>
