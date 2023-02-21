@@ -109,6 +109,7 @@ namespace EndProject.Areas.Manage.Controllers
             }
             if (!ModelState.IsValid)
             {
+
                 ViewBag.Colors = new SelectList(_context.Colors, nameof(Color.Id), nameof(Color.Name));
                 ViewBag.Tags = new SelectList(_context.Tags, nameof(Tag.Id), nameof(Tag.Name));
                 ViewBag.Categories = new SelectList(_context.Categories, nameof(Category.Id), nameof(Category.Name));

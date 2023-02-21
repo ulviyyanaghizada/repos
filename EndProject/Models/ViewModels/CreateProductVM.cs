@@ -9,7 +9,7 @@
         public double CostPrice { get; set; }
         public ICollection<IFormFile>? OtherImages { get; set; }
         public IFormFile PrimaryImage { get; set; }
-        public List<int> ColorIds { get; set; }
+        public List<int>? ColorIds { get; set; }
         public List<int> PFeatureIds { get; set; }
         public List<int> TagIds { get; set; }
         public List<int> CategoryIds { get; set; }

@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+@model CreateTrFacilitieVM
+<div class="content-wrapper">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">  Add Facilitie</h4>
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label asp-for="Title"></label>
+                        <input asp-for="Title" class="form-control" id="exampleInputName1" placeholder="Title">
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Icon"></label>
+                        <input accept="image/" asp-for="Icon" class="form-control" id="exampleInputName1" placeholder="Icon">
+                        <span asp-validation-for="Icon" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <a asp-action="Index" asp-controller="TrFacilitie" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

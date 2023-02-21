@@ -1,9 +1,10 @@
-﻿
+﻿@using EndProject.Models.ViewModels;
+@model ContactVM
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model HomeVM
+
 <!--Search Backdrop-->
 <div class="search-backdrop"></div>
 
@@ -127,7 +128,7 @@
 
 <!-- Banner Section -->
 <section class="inner-banner">
-    <div class="image-layer" style="background-image: url(images/background/banner-image-1.jpg);"></div>
+    <div class="image-layer" style="background-image: url('https://themeim.com/demo/treker/images/background/banner-image-1.jpg');"></div>
     <div class="auto-container">
         <div class="content-box">
             <h2>Contact</h2>
@@ -147,7 +148,7 @@
     <div class="floated-icon right-2"><img src="~/assets/images/resource/stones-right-2.svg" alt="" title=""></div>
     <div class="auto-container">
 
-        <div class="info-section">
+      @*  <div class="info-section">
             <div class="row clearfix">
                 <!--Block-->
                 @foreach (var item in Model.ContinentInfos)
@@ -164,43 +165,43 @@
                 }
                 
             </div>
-        </div>
+        </div>*@
         <div class="title-box centered">
             <h2><span>How can we Help?</span></h2>
             <div class="text">Contact us and get strapped in for a better adventure experience in your life-time. Just look for opportunity to be with nature. </div>
         </div>
         <div class="form-box site-form">
             <div class="contact-form">
-                <form method="post" action="contact.html">
+                <form method="post" asp-action="postContact" asp-controller="Contact    ">
                     <div class="row clearfix">
                         <div class="form-group col-lg-6 col-md-6 col-sm-12">
                             <div class="f-label">Your Name <i>*</i></div>
                             <div class="field-inner">
-                                <input type="text" name="fieldname" value="" placeholder="" required>
+                                <input asp-for="FullName" required>
                             </div>
                         </div>
                         <div class="form-group col-lg-6 col-md-6 col-sm-12">
                             <div class="f-label">Your Email <i>*</i></div>
                             <div class="field-inner">
-                                <input type="email" name="fieldname" value="" placeholder="" required>
+                                <input asp-for="Email" required>
                             </div>
                         </div>
                         <div class="form-group col-lg-6 col-md-6 col-sm-12">
                             <div class="f-label">Your Phone <i>*</i></div>
                             <div class="field-inner">
-                                <input type="text" name="fieldname" value="" placeholder="" required>
+                                <input asp-for="PhoneNumber" >
                             </div>
                         </div>
                         <div class="form-group col-lg-6 col-md-6 col-sm-12">
                             <div class="f-label">Your Subject <i>*</i></div>
                             <div class="field-inner">
-                                <input type="text" name="fieldname" value="" placeholder="" required>
+                                <input asp-for="subject" required>
                             </div>
                         </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12">
                             <div class="f-label">Write Message</div>
                             <div class="field-inner">
-                                <textarea name="fieldname" placeholder=""></textarea>
+                                <textarea asp-for="Message"></textarea>
                             </div>
                         </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12">
@@ -212,7 +213,7 @@
         </div>
     </div>
 </section>
-
+@*
 <!--Find Us Section-->
 <section class="find-us">
     <div class="floated-icon left"><img src="~/assets/images/resource/stones-left.svg" alt="" title=""></div>
@@ -280,7 +281,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>*@
 
 <section class="map-section">
     <!--Map Box-->

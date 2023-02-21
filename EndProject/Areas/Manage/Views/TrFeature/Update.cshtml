@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Update";
+}
+@model TrFeature
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-body">
+            <h4 class="card-title">Edit  Feature</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label asp-for="Title">Title</label>
+                    <input asp-for="Title" class="form-control" placeholder="Title">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <a asp-action="Index" class="btn btn-light">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+

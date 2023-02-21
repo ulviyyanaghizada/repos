@@ -1,4 +1,5 @@
 ﻿
+@model Tour
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -142,10 +143,10 @@
 					<div class="upper-box">
 						<div class="clearfix">
 							<div class="pull-left">
-								<h4>Discover Rajasthan</h4>
+								<h4>Discover @Model.Name</h4>
 							</div>
 							<div class="pull-right">
-								<div class="price">$120<span>/Person</span></div>
+								<div class="price">$@Model.Price<span>/Person</span></div>
 							</div>
 						</div>
 					</div>
@@ -159,7 +160,7 @@
 								<div class="inner-box">
 									<div class="icon"><img src="~/assets/images/icons/duration.svg" alt="" /></div>
 									<strong>Duration</strong>
-									4 Days
+									@Model.TourDays.Count Days
 								</div>
 							</div>
 
@@ -168,7 +169,10 @@
 								<div class="inner-box">
 									<div class="icon"><img src="~/assets/images/icons/category-icon.svg" alt="" /></div>
 									<strong>Category</strong>
-									Family Trip
+									@foreach (var category in Model.TourCategories.Where(c=>c.TourId==Model.Id))
+								{
+									@category.TCategory.Name
+								}
 								</div>
 							</div>
 
@@ -177,7 +181,7 @@
 								<div class="inner-box">
 									<div class="icon"><img src="~/assets/images/icons/team-group.svg" alt="" /></div>
 									<strong>Group Size</strong>
-									30 Person
+									@Model.GroupSize Person
 								</div>
 							</div>
 
@@ -209,94 +213,36 @@
 					</div>
 					<!-- Rating Box -->
 
-					<h5>About Rajasthan</h5>
-					<p>There are many reasons why an executive or VIP would choose personal security services. Executives could be in charge of large companies that are worth millions or more, leaving them to be a high-valued target for robbery, assault, and more. There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees. When it comes to other VIPs, they do not need necessarily need to be..</p>
-					<p>Leaving them to be a high-valued target for robbery, assault, and more. There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees. When it comes to other VIPs</p>
+					<h5>About @Model.Name</h5>
+					<p>@Model.Description</p>
 					<div class="feature-box">
 						<h5>Features</h5>
 						<ul class="feature-list">
-							<li>Free Download Instagram Logo</li>
-							<li>Illustrator from Instagram Logo 9 Vectors svg vector collection</li>
-							<li>Vectors SVG vector illustration graphic art design format.</li>
-							<li>Following vectors are from the same pack as this vector also</li>
-							<li>Instagram Logo SVG Vector is a part of Social Websites</li>
+						
+						@foreach (var feature in Model.TourFeatures?.Where(c => c.TourId == Model.Id))
+						{
+						<li>@feature.TFeature.Title</li>	
+						}
+							
 						</ul>
 					</div>
 					<div class="facility-box">
 						<h5>Facilities</h5>
 						<div class="row clearfix">
+							@foreach (var facilitie in Model.TourFacilities?.Where(c => c.TourId == Model.Id))
+						{
+							
 							<div class="column col-lg-3 col-md-4 col-sm-12">
 								<!-- Facility Box Two -->
 								<div class="facility-box-two">
 									<span class="icon">
-										<img src="~/assets/images/icons/tour-guide.svg" alt="" />
+										<img src="~/assets/images/resource/@facilitie.TFacilitie.IconUrl" alt="" />
 									</span>
-									Tour Operator
+									@facilitie.TFacilitie.Title
 								</div>
 							</div>
-							<div class="column col-lg-3 col-md-4 col-sm-12">
-								<!-- Facility Box Two -->
-								<div class="facility-box-two">
-									<span class="icon">
-										<img src="~/assets/images/icons/bill.svg" alt="" />
-									</span>
-									Online Ticketing
-								</div>
-							</div>
-							<div class="column col-lg-3 col-md-4 col-sm-12">
-								<!-- Facility Box Two -->
-								<div class="facility-box-two">
-									<span class="icon">
-										<img src="~/assets/images/icons/passport.svg" alt="" />
-									</span>
-									Passport & Visa
-								</div>
-							</div>
-							<div class="column col-lg-3 col-md-4 col-sm-12">
-								<!-- Facility Box Two -->
-								<div class="facility-box-two">
-									<span class="icon">
-										<img src="~/assets/images/icons/travel-insurance.svg" alt="" />
-									</span>
-									Travel Insurance
-								</div>
-							</div>
-							<div class="column col-lg-3 col-md-4 col-sm-12">
-								<!-- Facility Box Two -->
-								<div class="facility-box-two">
-									<span class="icon">
-										<img src="~/assets/images/icons/ship.svg" alt="" />
-									</span>
-									Cruise Services
-								</div>
-							</div>
-							<div class="column col-lg-3 col-md-4 col-sm-12">
-								<!-- Facility Box Two -->
-								<div class="facility-box-two">
-									<span class="icon">
-										<img src="~/assets/images/icons/calendar.svg" alt="" />
-									</span>
-									Hotel Booking
-								</div>
-							</div>
-							<div class="column col-lg-3 col-md-4 col-sm-12">
-								<!-- Facility Box Two -->
-								<div class="facility-box-two">
-									<span class="icon">
-										<img src="~/assets/images/icons/key.svg" alt="" />
-									</span>
-									Car Rental
-								</div>
-							</div>
-							<div class="column col-lg-3 col-md-4 col-sm-12">
-								<!-- Facility Box Two -->
-								<div class="facility-box-two">
-									<span class="icon">
-										<img src="~/assets/images/icons/events.svg" alt="" />
-									</span>
-									Event Organizers
-								</div>
-							</div>
+						}
+						
 						</div>
 					</div>
 
@@ -429,378 +375,7 @@
 										</div>
 									</div>
 								</div>
-								<!--Block-->
-								<div class="accordion block">
-									<div class="acc-btn">Day 2 <i class="fa-regular fa-angle-down"></i></div>
-									<div class="acc-content">
-										<div class="content">
-											<div class="bold-text">Ranthambore National Park</div>
-											<div class="text">Leaving them to be a high-valued target for robbery, assault, and more. There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</div>
-											<!-- Faq Gallery -->
-											<div class="faq-gallery">
-												<div class="row clearfix">
-													<!-- Image Column -->
-													<div class="image-column col-lg-4 col-md-4 col-sm-12">
-														<div class="image">
-															<img src="~/assets/images/resource/faq-1.jpg" alt="" />
-														</div>
-													</div>
-													<!-- Image Column -->
-													<div class="image-column col-lg-4 col-md-4 col-sm-12">
-														<div class="image">
-															<img src="~/assets/images/resource/faq-1.jpg" alt="" />
-														</div>
-													</div>
-													<!-- Map Column -->
-													<div class="map-column col-lg-4 col-md-4 col-sm-12">
-														<div class="map-boxed">
-															<span class="icon fas fa-location-dot fa-fw"></span>
-															<h6>Google map</h6>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- End Faq Gallery -->
-
-											<!-- Faq Info Tabs -->
-											<div class="faq-info-tabs">
-												<!-- Faq Tabs -->
-												<div class="faq-tabs tabs-box">
-
-													<!-- Tab Btns -->
-													<ul class="tab-btns tab-buttons clearfix">
-														<li data-tab="#prod-4" class="tab-btn active-btn">Accomodation</li>
-														<li data-tab="#prod-5" class="tab-btn">Meals</li>
-														<li data-tab="#prod-6" class="tab-btn">Special Info</li>
-													</ul>
-
-													<!-- Tabs Container -->
-													<div class="tabs-content">
-
-														<!-- Tab / Active Tab -->
-														<div class="tab active-tab" id="prod-4">
-															<div class="inner-content">
-																<p>There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</p>
-																<div class="hotel-info">
-																	<div class="hotel-image">
-																		<img src="~/assets/images/resource/hotel.jpg" alt="" />
-																	</div>
-																	<div class="hotel-name">HOTEL RAJASTHAN PALACE JAIPUR</div>
-																	<ul class="list">
-																		<li>
-																			<span>Shared Room</span>
-																			Free
-																		</li>
-																		<li>
-																			<span>Double Room</span>
-																			$50 Extar
-																		</li>
-																		<li>
-																			<span>Single Room</span>
-																			$50 Extar
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-
-														<!-- Tab -->
-														<div class="tab" id="prod-5">
-															<div class="inner-content">
-																<p>There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</p>
-																<div class="hotel-info">
-																	<div class="hotel-image">
-																		<img src="~/assets/images/resource/hotel.jpg" alt="" />
-																	</div>
-																	<div class="hotel-name">HOTEL RAJASTHAN PALACE JAIPUR</div>
-																	<ul class="list">
-																		<li>
-																			<span>Shared Room</span>
-																			Free
-																		</li>
-																		<li>
-																			<span>Double Room</span>
-																			$50 Extar
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-
-														<!-- Tab -->
-														<div class="tab" id="prod-6">
-															<div class="inner-content">
-																<p>There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</p>
-																<div class="hotel-info">
-																	<div class="hotel-image">
-																		<img src="~/assets/images/resource/hotel.jpg" alt="" />
-																	</div>
-																	<div class="hotel-name">HOTEL RAJASTHAN PALACE JAIPUR</div>
-																	<ul class="list">
-																		<li>
-																			<span>Shared Room</span>
-																			Free
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-
-													</div>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<!--Block-->
-								<div class="accordion block">
-									<div class="acc-btn">Day 3 <i class="fa-regular fa-angle-down"></i></div>
-									<div class="acc-content">
-										<div class="content">
-											<div class="bold-text">Ranthambore National Park</div>
-											<div class="text">Leaving them to be a high-valued target for robbery, assault, and more. There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</div>
-											<!-- Faq Gallery -->
-											<div class="faq-gallery">
-												<div class="row clearfix">
-													<!-- Image Column -->
-													<div class="image-column col-lg-4 col-md-4 col-sm-12">
-														<div class="image">
-															<img src="~/assets/images/resource/faq-1.jpg" alt="" />
-														</div>
-													</div>
-													<!-- Image Column -->
-													<div class="image-column col-lg-4 col-md-4 col-sm-12">
-														<div class="image">
-															<img src="~/assets/images/resource/faq-1.jpg" alt="" />
-														</div>
-													</div>
-													<!-- Map Column -->
-													<div class="map-column col-lg-4 col-md-4 col-sm-12">
-														<div class="map-boxed">
-															<span class="icon fas fa-location-dot fa-fw"></span>
-															<h6>Google map</h6>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- End Faq Gallery -->
-
-											<!-- Faq Info Tabs -->
-											<div class="faq-info-tabs">
-												<!-- Faq Tabs -->
-												<div class="faq-tabs tabs-box">
-
-													<!-- Tab Btns -->
-													<ul class="tab-btns tab-buttons clearfix">
-														<li data-tab="#prod-7" class="tab-btn active-btn">Accomodation</li>
-														<li data-tab="#prod-8" class="tab-btn">Meals</li>
-														<li data-tab="#prod-9" class="tab-btn">Special Info</li>
-													</ul>
-
-													<!-- Tabs Container -->
-													<div class="tabs-content">
-
-														<!-- Tab / Active Tab -->
-														<div class="tab active-tab" id="prod-7">
-															<div class="inner-content">
-																<p>There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</p>
-																<div class="hotel-info">
-																	<div class="hotel-image">
-																		<img src="~/assets/images/resource/hotel.jpg" alt="" />
-																	</div>
-																	<div class="hotel-name">HOTEL RAJASTHAN PALACE JAIPUR</div>
-																	<ul class="list">
-																		<li>
-																			<span>Shared Room</span>
-																			Free
-																		</li>
-																		<li>
-																			<span>Double Room</span>
-																			$50 Extar
-																		</li>
-																		<li>
-																			<span>Single Room</span>
-																			$50 Extar
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-
-														<!-- Tab -->
-														<div class="tab" id="prod-8">
-															<div class="inner-content">
-																<p>There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</p>
-																<div class="hotel-info">
-																	<div class="hotel-image">
-																		<img src="~/assets/images/resource/hotel.jpg" alt="" />
-																	</div>
-																	<div class="hotel-name">HOTEL RAJASTHAN PALACE JAIPUR</div>
-																	<ul class="list">
-																		<li>
-																			<span>Shared Room</span>
-																			Free
-																		</li>
-																		<li>
-																			<span>Double Room</span>
-																			$50 Extar
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-
-														<!-- Tab -->
-														<div class="tab" id="prod-9">
-															<div class="inner-content">
-																<p>There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</p>
-																<div class="hotel-info">
-																	<div class="hotel-image">
-																		<img src="~/assets/images/resource/hotel.jpg" alt="" />
-																	</div>
-																	<div class="hotel-name">HOTEL RAJASTHAN PALACE JAIPUR</div>
-																	<ul class="list">
-																		<li>
-																			<span>Shared Room</span>
-																			Free
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-
-													</div>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<!--Block-->
-								<div class="accordion block">
-									<div class="acc-btn">Day 4 <i class="fa-regular fa-angle-down"></i></div>
-									<div class="acc-content">
-										<div class="content">
-											<div class="bold-text">Ranthambore National Park</div>
-											<div class="text">Leaving them to be a high-valued target for robbery, assault, and more. There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</div>
-											<!-- Faq Gallery -->
-											<div class="faq-gallery">
-												<div class="row clearfix">
-													<!-- Image Column -->
-													<div class="image-column col-lg-4 col-md-4 col-sm-12">
-														<div class="image">
-															<img src="~/assets/images/resource/faq-1.jpg" alt="" />
-														</div>
-													</div>
-													<!-- Image Column -->
-													<div class="image-column col-lg-4 col-md-4 col-sm-12">
-														<div class="image">
-															<img src="~/assets/images/resource/faq-1.jpg" alt="" />
-														</div>
-													</div>
-													<!-- Map Column -->
-													<div class="map-column col-lg-4 col-md-4 col-sm-12">
-														<div class="map-boxed">
-															<span class="icon fas fa-location-dot fa-fw"></span>
-															<h6>Google map</h6>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- End Faq Gallery -->
-
-											<!-- Faq Info Tabs -->
-											<div class="faq-info-tabs">
-												<!-- Faq Tabs -->
-												<div class="faq-tabs tabs-box">
-
-													<!-- Tab Btns -->
-													<ul class="tab-btns tab-buttons clearfix">
-														<li data-tab="#prod-10" class="tab-btn active-btn">Accomodation</li>
-														<li data-tab="#prod-11" class="tab-btn">Meals</li>
-														<li data-tab="#prod-12" class="tab-btn">Special Info</li>
-													</ul>
-
-													<!-- Tabs Container -->
-													<div class="tabs-content">
-
-														<!-- Tab / Active Tab -->
-														<div class="tab active-tab" id="prod-10">
-															<div class="inner-content">
-																<p>There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</p>
-																<div class="hotel-info">
-																	<div class="hotel-image">
-																		<img src="~/assets/images/resource/hotel.jpg" alt="" />
-																	</div>
-																	<div class="hotel-name">HOTEL RAJASTHAN PALACE JAIPUR</div>
-																	<ul class="list">
-																		<li>
-																			<span>Shared Room</span>
-																			Free
-																		</li>
-																		<li>
-																			<span>Double Room</span>
-																			$50 Extar
-																		</li>
-																		<li>
-																			<span>Single Room</span>
-																			$50 Extar
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-
-														<!-- Tab -->
-														<div class="tab" id="prod-11">
-															<div class="inner-content">
-																<p>There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</p>
-																<div class="hotel-info">
-																	<div class="hotel-image">
-																		<img src="~/assets/images/resource/hotel.jpg" alt="" />
-																	</div>
-																	<div class="hotel-name">HOTEL RAJASTHAN PALACE JAIPUR</div>
-																	<ul class="list">
-																		<li>
-																			<span>Shared Room</span>
-																			Free
-																		</li>
-																		<li>
-																			<span>Double Room</span>
-																			$50 Extar
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-
-														<!-- Tab -->
-														<div class="tab" id="prod-12">
-															<div class="inner-content">
-																<p>There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</p>
-																<div class="hotel-info">
-																	<div class="hotel-image">
-																		<img src="~/assets/images/resource/hotel.jpg" alt="" />
-																	</div>
-																	<div class="hotel-name">HOTEL RAJASTHAN PALACE JAIPUR</div>
-																	<ul class="list">
-																		<li>
-																			<span>Shared Room</span>
-																			Free
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-
-													</div>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</div>
+								
 
 							</div>
 						</div>

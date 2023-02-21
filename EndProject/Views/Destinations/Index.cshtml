@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@model DestinationVM
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -149,7 +152,7 @@
 
         <!-- Banner Section -->
         <section class="inner-banner">
-            <div class="image-layer" style="background-image: url(images/background/banner-image-1.jpg);"></div>
+            <div class="image-layer" style="background-image: url('https://themeim.com/demo/treker/images/background/banner-image-1.jpg');"></div>
             <div class="auto-container">
                 <div class="content-box">
                     <h2>Destinations</h2>
@@ -178,141 +181,31 @@
                     <div class="gallery-filters centered clearfix">
                         <ul class="filter-tabs filter-btns clearfix">
                             <li class="active filter" data-role="button" data-filter="all">All</li>
-                            <li class="filter" data-role="button" data-filter=".europe">Europe</li>
-                            <li class="filter" data-role="button" data-filter=".asia">Asia</li>
-                            <li class="filter" data-role="button" data-filter=".s-america">South America</li>
-                            <li class="filter" data-role="button" data-filter=".n-america">North America</li>
-                            <li class="filter" data-role="button" data-filter=".africa">Africa</li>
-                            <li class="filter" data-role="button" data-filter=".australia">Australia</li>
+                            @foreach (var continent in Model.Continents)
+                            {
+                                <li class="filter" data-role="button" data-filter=".@continent.Name">@continent.Name</li>
+                   
+                            }
+                            
                         </ul>
                     </div>
                     <div class="filter-list row clearfix">
                         <!--Block-->
-                        <div class="trend-block-one mix all africa australia col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                        @foreach (var country in Model.Countires)
+                        {
+                        <div class="trend-block-one mix all  @country.Continent.Name col-xl-4 col-lg-6 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-7.jpg" alt="" title=""></a></div>
+                                    <div class="image"><a href="~/assets/#"><img src="~/assets/images/country/@country.ImageUrl" alt="" title=""></a></div>
                                 </div>
-                                <div class="count"><span>6 Tours</span></div>
+                                <div class="count"><span>@country.Tours.Count Tours</span></div>
                                 <div class="title clearfix">
-                                    <h4><a href="~/assets/#">Rajasthan</a></h4>
-                                    <div class="more-link"><a href="~/assets/#" class="theme-btn"><span class="far fa-long-arrow-right"></span></a></div>
+                                    <h4><a href="~/assets/#">@country.Name</a></h4>
+                                    <div class="more-link"><a asp-controller="Destinations2" asp-action="Index" asp-route-id="@country.Id" class="theme-btn"><span class="far fa-long-arrow-right"></span></a></div>
                                 </div>
                             </div>
                         </div>
-
-                        <!--Block-->
-                        <div class="trend-block-one mix all europe n-america africa australia col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-8.jpg" alt="" title=""></a></div>
-                                </div>
-                                <div class="count"><span>6 Tours</span></div>
-                                <div class="title clearfix">
-                                    <h4><a href="~/assets/#">Indonesia</a></h4>
-                                    <div class="more-link"><a href="~/assets/#" class="theme-btn"><span class="far fa-long-arrow-right"></span></a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Block-->
-                        <div class="trend-block-one mix all europe asia s-america australia col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-9.jpg" alt="" title=""></a></div>
-                                </div>
-                                <div class="count"><span>6 Tours</span></div>
-                                <div class="title clearfix">
-                                    <h4><a href="~/assets/#">Bekasi</a></h4>
-                                    <div class="more-link"><a href="~/assets/#" class="theme-btn"><span class="far fa-long-arrow-right"></span></a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Block-->
-                        <div class="trend-block-one mix all europe asia s-america col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-10.jpg" alt="" title=""></a></div>
-                                </div>
-                                <div class="count"><span>6 Tours</span></div>
-                                <div class="title clearfix">
-                                    <h4><a href="~/assets/#">Helsingfors</a></h4>
-                                    <div class="more-link"><a href="~/assets/#" class="theme-btn"><span class="far fa-long-arrow-right"></span></a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Block-->
-                        <div class="trend-block-one mix all s-america n-america australia col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-11.jpg" alt="" title=""></a></div>
-                                </div>
-                                <div class="count"><span>6 Tours</span></div>
-                                <div class="title clearfix">
-                                    <h4><a href="~/assets/#">Tavastehus</a></h4>
-                                    <div class="more-link"><a href="~/assets/#" class="theme-btn"><span class="far fa-long-arrow-right"></span></a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Block-->
-                        <div class="trend-block-one mix all europe asia africa australia col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-12.jpg" alt="" title=""></a></div>
-                                </div>
-                                <div class="count"><span>6 Tours</span></div>
-                                <div class="title clearfix">
-                                    <h4><a href="~/assets/#">Grankulla</a></h4>
-                                    <div class="more-link"><a href="~/assets/#" class="theme-btn"><span class="far fa-long-arrow-right"></span></a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Block-->
-                        <div class="trend-block-one mix all s-america n-america africa col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-13.jpg" alt="" title=""></a></div>
-                                </div>
-                                <div class="count"><span>6 Tours</span></div>
-                                <div class="title clearfix">
-                                    <h4><a href="~/assets/#">Rajasthan</a></h4>
-                                    <div class="more-link"><a href="~/assets/#" class="theme-btn"><span class="far fa-long-arrow-right"></span></a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Block-->
-                        <div class="trend-block-one mix all europe asia africa australia col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-14.jpg" alt="" title=""></a></div>
-                                </div>
-                                <div class="count"><span>6 Tours</span></div>
-                                <div class="title clearfix">
-                                    <h4><a href="~/assets/#">Indonesia</a></h4>
-                                    <div class="more-link"><a href="~/assets/#" class="theme-btn"><span class="far fa-long-arrow-right"></span></a></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Block-->
-                        <div class="trend-block-one mix all europe asia s-america australia col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-15.jpg" alt="" title=""></a></div>
-                                </div>
-                                <div class="count"><span>6 Tours</span></div>
-                                <div class="title clearfix">
-                                    <h4><a href="~/assets/#">Bekasi</a></h4>
-                                    <div class="more-link"><a href="~/assets/#" class="theme-btn"><span class="far fa-long-arrow-right"></span></a></div>
-                                </div>
-                            </div>
-                        </div>
-
+                        }
                     </div>
 
                     <div class="load-more"><a href="~/assets/#" class="theme-btn btn-style-one"><span>Load More......</span></a></div>

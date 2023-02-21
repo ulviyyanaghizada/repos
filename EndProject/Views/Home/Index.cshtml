@@ -357,11 +357,14 @@
 
             <div class="row clearfix">
                 <!--Block-->
-                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                @foreach (var item in Model.Products)
+            {
+                
+               <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="why-block">
                             <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-1.jpg" alt=""></a></div>
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/product/@item.ProductImages?.FirstOrDefault(pi=>pi.IsPrimary == true)?.ImageUrl" alt=""></a></div>
                                 <div class="hvr-box">
                                     <div class="hvr-inner">
                                         <div class="hvr-content">
@@ -373,188 +376,15 @@
                                 <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
                             </div>
                             <div class="lower-box">
-                                <h5><a href="~/assets/#">Smart Air Bag Travel</a></h5>
-                                <div class="price"><span>$225.00</span></div>
+                                <h5><a href="~/assets/#">@item.Title</a></h5>
+                                <div class="price"><span>$ @item.CostPrice</span></div>
                             </div>
                         </div>
 
                     </div>
                 </div>
+            }
 
-                <!--Block-->
-                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="why-block">
-                            <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-2.jpg" alt=""></a></div>
-                                <div class="hvr-box">
-                                    <div class="hvr-inner">
-                                        <div class="hvr-content">
-                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
-                                        <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
-                            </div>
-                            <div class="lower-box">
-                                <h5><a href="~/assets/#">Travel Suitcase Bag</a></h5>
-                                <div class="price"><span>$225.00</span></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--Block-->
-                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="why-block">
-                            <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-3.jpg" alt=""></a></div>
-                                <div class="hvr-box">
-                                    <div class="hvr-inner">
-                                        <div class="hvr-content">
-                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
-                                            <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
-                            </div>
-                            <div class="lower-box">
-                                <h5><a href="~/assets/#">Travel Light Suitcase</a></h5>
-                                <div class="price"><span>$225.00</span></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--Block-->
-                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="why-block">
-                            <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-4.jpg" alt=""></a></div>
-                                <div class="hvr-box">
-                                    <div class="hvr-inner">
-                                        <div class="hvr-content">
-                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
-                                            <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
-                            </div>
-                            <div class="lower-box">
-                                <h5><a href="~/assets/#">Smart Travel Gadgets</a></h5>
-                                <div class="price"><span>$225.00</span></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--Block-->
-                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="why-block">
-                            <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-5.jpg" alt=""></a></div>
-                                <div class="hvr-box">
-                                    <div class="hvr-inner">
-                                        <div class="hvr-content">
-                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
-                                            <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
-                            </div>
-                            <div class="lower-box">
-                                <h5><a href="~/assets/#">Set of Black Silk Pillow</a></h5>
-                                <div class="price"><span>$225.00</span></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--Block-->
-                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="why-block">
-                            <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-6.jpg" alt=""></a></div>
-                                <div class="hvr-box">
-                                    <div class="hvr-inner">
-                                        <div class="hvr-content">
-                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
-                                            <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
-                            </div>
-                            <div class="lower-box">
-                                <h5><a href="~/assets/#">Travel Slipping Support</a></h5>
-                                <div class="price"><span>$225.00</span></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--Block-->
-                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="why-block">
-                            <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-7.jpg" alt=""></a></div>
-                                <div class="hvr-box">
-                                    <div class="hvr-inner">
-                                        <div class="hvr-content">
-                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
-                                            <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
-                            </div>
-                            <div class="lower-box">
-                                <h5><a href="~/assets/#">Travelling Black Suitcase</a></h5>
-                                <div class="price"><span>$225.00</span></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--Block-->
-                <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="why-block">
-                            <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/shop/prod-8.jpg" alt=""></a></div>
-                                <div class="hvr-box">
-                                    <div class="hvr-inner">
-                                        <div class="hvr-content">
-                                            <div class="link"><a href="~/assets/#" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
-                                        <div class="link"><a asp-controller="ProductDetails" asp-action="Index" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="add-fav"><a href="~/assets/#" class="theme-btn"><i class="far fa-heart"></i></a></div>
-                            </div>
-                            <div class="lower-box">
-                                <h5><a href="~/assets/#">Coffee Travel Mug</a></h5>
-                                <div class="price"><span>$225.00</span></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
 
             </div>
 

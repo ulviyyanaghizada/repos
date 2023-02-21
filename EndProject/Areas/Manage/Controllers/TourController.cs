@@ -1,5 +1,5 @@
 ﻿using EndProject.DAL;
-using EndProject.Migrations;
+
 using EndProject.Models;
 using EndProject.Models.AllTourInfo;
 using EndProject.Models.ViewModels;
@@ -22,10 +22,12 @@ namespace EndProject.Areas.Manage.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.Tours.Include(t => t.Country).
-                Include(t => t.TourImages).Include(t => t.TourCategories).ThenInclude(tc => tc.TCategory).
-                Include(t=>t.TourFeatures).ThenInclude(tc=>tc.TFeature).
-                Include(t => t.TourFacilities).ThenInclude(tc => tc.TFacilitie));
+            var country = _context.Tours.Include(t => t.TourCategories).ThenInclude(tc => tc.TCategory).
+            Include(t => t.TourFeatures).ThenInclude(tc => tc.TFeature).
+            Include(t => t.TourFacilities).ThenInclude(tc => tc.TFacilitie).Include(t => t.Country).Include(t => t.TourImages);
+
+            return View(country);
+          
         }
         public IActionResult Delete(int? id)
         {
@@ -59,7 +61,7 @@ namespace EndProject.Areas.Manage.Controllers
         public IActionResult Create(CreateTourVM ctour)
         {
             var video = ctour.Video;
-            var result1 = video?.CheckValidate("video/", 2000);
+            var result1 = video?.CheckValidate("video/", 20000);
             if (result1?.Length > 0)
             {
                 ModelState.AddModelError("Video", result1);
@@ -93,13 +95,13 @@ namespace EndProject.Areas.Manage.Controllers
             {
                 if (!_context.TFeatures.Any(c => c.Id == tFeatureId))
                 {
-                    ModelState.AddModelError("TagIds", "There is no matched feature with this id!");
+                    ModelState.AddModelError("TFeaturesIds", "There is no matched feature with this id!");
                     break;
                 }
             }
             foreach (int categoryId in (ctour.TCategoriesIds ?? new List<int>()))
             {
-                if (!_context.Categories.Any(c => c.Id == categoryId))
+                if (!_context.TCategories.Any(c => c.Id == categoryId))
                 {
                     ModelState.AddModelError("TCategoriesIds", "There is no matched category with this id!");
                     break;
@@ -153,7 +155,7 @@ namespace EndProject.Areas.Manage.Controllers
             _context.Tours.Add(tour);
             foreach (var item in features)
             {
-                _context.TourFeatures.Add(new TourFeature { Tour = tour, TFeatueId = item.Id });
+                _context.TourFeatures.Add(new TourFeature { Tour = tour, TFeatureId = item.Id });
             }
             foreach (var item in facilities)
             {
@@ -182,7 +184,7 @@ namespace EndProject.Areas.Manage.Controllers
                 GroupSize = tour.GroupSize,
                 TourImages = tour.TourImages.ToList(),
                 CountryId=tour.CountryId,
-                TFeaturesIds = tour.TourFeatures.Select(pc => pc.TFeatueId).ToList(),
+                TFeaturesIds = tour.TourFeatures.Select(pc => pc.TFeatureId).ToList(),
                 TFacilitiesIds = tour.TourFacilities.Select(pc => pc.TFacilitieId).ToList(),
                 CategoriesIds = tour.TourCategories.Select(pc => pc.TCategoryId).ToList(),
                 VideoUrl = tour.VideoUrl,
@@ -295,9 +297,9 @@ namespace EndProject.Areas.Manage.Controllers
 
             foreach (var item in tour.TourFeatures)
             {
-                if (update.TFeaturesIds.Contains(item.TFeatueId))
+                if (update.TFeaturesIds.Contains(item.TFeatureId))
                 {
-                    update.TFeaturesIds.Remove(item.TFeatueId);
+                    update.TFeaturesIds.Remove(item.TFeatureId);
                 }
                 else
                 {
@@ -306,7 +308,7 @@ namespace EndProject.Areas.Manage.Controllers
             }
             foreach (var featureId in update.TFeaturesIds)
             {
-                _context.TourFeatures.Add(new TourFeature { Tour = tour, TFeatueId = featureId });
+                _context.TourFeatures.Add(new TourFeature { Tour = tour, TFeatureId = featureId });
             }
             
             List<TourImage> images = new List<TourImage>();
@@ -352,9 +354,8 @@ namespace EndProject.Areas.Manage.Controllers
 
             }
             tour.Title = update.Title;
+            tour.Name = update.Name;
             tour.Description = update.Description;
-            tour.Name = update.Description;
-            tour.Description = update.Name;
             tour.Price = update.Price;
             tour.GroupSize = update.GroupSize;
             tour.CountryId = update.CountryId;

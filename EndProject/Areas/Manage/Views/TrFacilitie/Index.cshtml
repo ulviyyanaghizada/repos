@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model IEnumerable<TrFacilitie>
+<div class="content-wrapper">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Facilitie </h4>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Icon</th>
+                                <th>Title</th>
+                                <th colspan="2">Operations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td class="py-1">
+                                        <img src="~/assets/images/resource/@item.IconUrl" alt="image" />
+                                    </td>
+                                    <td>@item.Title</td>
+
+                                    <td><a asp-action="Delete" asp-route-id="@item.Id" asp-controller="TrFacilitie" class="btn btn-danger">Delete</a></td>
+                                    <td><a asp-action="Update" asp-route-id="@item.Id" asp-controller="TrFacilitie" class="btn btn-success">Update</a></td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

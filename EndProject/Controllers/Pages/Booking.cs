@@ -1,5 +1,5 @@
 ﻿using EndProject.DAL;
-using EndProject.Models.ViewModels.Home;
+using EndProject.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EndProject.Controllers.Pages

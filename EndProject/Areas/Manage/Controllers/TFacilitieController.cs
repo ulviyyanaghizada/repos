@@ -8,7 +8,6 @@ using EndProject.Models.AllTourInfo;
 namespace EndProject.Areas.Manage.Controllers
 {
     [Area("Manage")]
-
     public class TFacilitieController : Controller
     {
         AppDbContext _context { get; }

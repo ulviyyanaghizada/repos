@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model Country
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -144,7 +145,7 @@
 
     <!-- Banner Section -->
     <section class="inner-banner">
-        <div class="image-layer" style="background-image: url(images/background/banner-image-1.jpg);"></div>
+            <div class="image-layer" style="background-image: url('https://themeim.com/demo/treker/images/background/banner-image-1.jpg');"></div>
         <div class="auto-container">
             <div class="content-box">
                 <h2>Destinations tours</h2>
@@ -165,155 +166,38 @@
         <div class="floated-icon right"><img src="~/assets/images/resource/stones-right.svg" alt="" title=""></div>
         <div class="auto-container">
             <div class="title-box centered">
-                <h2><span>Discover Rajasthan</span></h2>
-                <div class="text">Since 2014, we’ve helped more than 500,000 people of all ages enjoy the best outdoor experience of their lives. Whether it’s for one day or a two-week vacation, close to home or a foreign land.</div>
+                <h2><span>Discover @Model.Name</span></h2>
+                <div class="text">@Model.Description</div>
             </div>
             <div class="content-box">
                 <div class="row clearfix">
                     <!--Block-->
-                    <div class="tour-block-one col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                    @foreach (var tours in Model.Tours)
+                        {
+                            
+                            <div class="tour-block-one col-xl-4 col-lg-6 col-md-6 col-sm-12">
                         <div class="inner-box">
                             <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-1.jpg" alt="" title=""></a></div>
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/tour/@tours.TourImages?.FirstOrDefault(ti=>ti.IsPrimary == true)?.ImageUrl" alt="" title=""></a></div>
                             </div>
                             <div class="lower-content">
-                                <div class="price"><span>$120</span></div>
-                                <h4><a href="~/assets/#">Amber Palace </a></h4>
+                                <div class="price"><span>$@tours.Price</span></div>
+                                <h4><a asp-controller="Tours" asp-action="Index" asp-route-id="@tours.Id">@tours.Name</a></h4>
                                 <div class="ratings clearfix">
                                     <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
                                     <div class="rev"><a href="~/assets/#">05 Review</a></div>
                                 </div>
-                                <div class="text">Richly varied landscapes, luxurious accommodation.</div>
+                                <div class="text">@tours.Title</div>
                                 <div class="bottom-box clearfix">
                                     <div class="info">
-                                        <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
+                                        <span class="i-block"><i class="icon far fa-clock"></i> @tours.TourDays.Count days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-
-                    <!--Block-->
-                    <div class="tour-block-one col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-2.jpg" alt="" title=""></a></div>
-                            </div>
-                            <div class="lower-content">
-                                <div class="price"><span>$120</span></div>
-                                <h4><a href="~/assets/#">Hawa Mahal </a></h4>
-                                <div class="ratings clearfix">
-                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
-                                    <div class="rev"><a href="~/assets/#">05 Review</a></div>
-                                </div>
-                                <div class="text">Richly varied landscapes, luxurious accommodation.</div>
-                                <div class="bottom-box clearfix">
-                                    <div class="info">
-                                        <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!--Block-->
-                    <div class="tour-block-one col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-3.jpg" alt="" title=""></a></div>
-                            </div>
-                            <div class="lower-content">
-                                <div class="price"><span>$120</span></div>
-                                <h4><a href="~/assets/#">Sariska Tiger  </a></h4>
-                                <div class="ratings clearfix">
-                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
-                                    <div class="rev"><a href="~/assets/#">05 Review</a></div>
-                                </div>
-                                <div class="text">Richly varied landscapes, luxurious accommodation.</div>
-                                <div class="bottom-box clearfix">
-                                    <div class="info">
-                                        <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!--Block-->
-                    <div class="tour-block-one col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-4.jpg" alt="" title=""></a></div>
-                            </div>
-                            <div class="lower-content">
-                                <div class="price"><span>$120</span></div>
-                                <h4><a href="~/assets/#">Nahargarh Fort </a></h4>
-                                <div class="ratings clearfix">
-                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
-                                    <div class="rev"><a href="~/assets/#">05 Review</a></div>
-                                </div>
-                                <div class="text">Richly varied landscapes, luxurious accommodation.</div>
-                                <div class="bottom-box clearfix">
-                                    <div class="info">
-                                        <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!--Block-->
-                    <div class="tour-block-one col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-5.jpg" alt="" title=""></a></div>
-                            </div>
-                            <div class="lower-content">
-                                <div class="price"><span>$120</span></div>
-                                <h4><a href="~/assets/#">Jal Mahal </a></h4>
-                                <div class="ratings clearfix">
-                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
-                                    <div class="rev"><a href="~/assets/#">05 Review</a></div>
-                                </div>
-                                <div class="text">Richly varied landscapes, luxurious accommodation.</div>
-                                <div class="bottom-box clearfix">
-                                    <div class="info">
-                                        <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!--Block-->
-                    <div class="tour-block-one col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/tour-6.jpg" alt="" title=""></a></div>
-                            </div>
-                            <div class="lower-content">
-                                <div class="price"><span>$120</span></div>
-                                <h4><a href="~/assets/#">Chittorgarh  </a></h4>
-                                <div class="ratings clearfix">
-                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
-                                    <div class="rev"><a href="~/assets/#">05 Review</a></div>
-                                </div>
-                                <div class="text">Richly varied landscapes, luxurious accommodation.</div>
-                                <div class="bottom-box clearfix">
-                                    <div class="info">
-                                        <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
+                        }
                 </div>
 
                 <div class="load-more"><a href="~/assets/#" class="theme-btn btn-style-one"><span>Load More......</span></a></div>

@@ -1,7 +1,8 @@
 ﻿using EndProject.DAL;
 using EndProject.Models;
-using EndProject.Models.ViewModels.Home;
+using EndProject.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EndProject.Controllers.Home
 {
@@ -21,19 +22,13 @@ namespace EndProject.Controllers.Home
                 Entries = _context.Entries , 
                 Chooses = _context.Chooses.ToList(),
                 Agencies=_context.Agencies,
-                Brands=_context.Brands
+                Brands=_context.Brands,
+                Products=_context.Products.Include(p=>p.ProductImages)
             
             };
 
             return View(home);
         }
-        public IActionResult GetEmployee(int id)
-        {
-            Employee employee = _context.Employees.FirstOrDefault(e => e.Id == id);
-
-            if(employee == null) return NotFound();
-
-            return PartialView("_EmployeeModalPartial",employee);
-        }
+       
     }
 }

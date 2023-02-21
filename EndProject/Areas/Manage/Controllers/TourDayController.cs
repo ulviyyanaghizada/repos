@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EndProject.Utilities.Extensions;
 using EndProject.Models.AllTourInfo;
-using EndProject.Migrations;
+
 
 namespace EndProject.Areas.Manage.Controllers
 {
@@ -26,8 +26,8 @@ namespace EndProject.Areas.Manage.Controllers
         }
         public IActionResult Create()
         {
-            ViewBag.Hotels = new SelectList(_context.Hotels.ToList(), nameof(Position.Id), nameof(Position.Name));
-            ViewBag.Tours = new SelectList(_context.Tours.ToList(), nameof(Position.Id), nameof(Position.Name));
+            ViewBag.Hotels = new SelectList(_context.Hotels.ToList(), nameof(Hotel.Id), nameof(Hotel.Name));
+            ViewBag.Tours = new SelectList(_context.Tours.ToList(), nameof(Tour.Id), nameof(Tour.Name));
             return View();
         }
         [HttpPost]
@@ -50,16 +50,16 @@ namespace EndProject.Areas.Manage.Controllers
             }
             if (!_context.Hotels.Any(p => p.Id == create.HotelId))
             {
-                ModelState.AddModelError("PositionId", "Bu Id'li hotel yoxdur");
+                ModelState.AddModelError("HotelId", "Bu Id'li hotel yoxdur");
             }      
             if (!_context.Tours.Any(p => p.Id == create.TourId))
             {
-                ModelState.AddModelError("PositionId", "Bu Id'li tour yoxdur");
+                ModelState.AddModelError("TourId", "Bu Id'li tour yoxdur");
             }
             if (!ModelState.IsValid)
             {
-                ViewBag.Hotels = new SelectList(_context.Hotels.ToList(), nameof(Position.Id), nameof(Position.Name));
-                ViewBag.Tours = new SelectList(_context.Tours.ToList(), nameof(Position.Id), nameof(Position.Name));
+                ViewBag.Hotels = new SelectList(_context.Hotels.ToList(), nameof(Hotel.Id), nameof(Hotel.Name));
+                ViewBag.Tours = new SelectList(_context.Tours.ToList(), nameof(Tour.Id), nameof(Tour.Name));
                 return View();
             }
             TourDay day = new TourDay()
@@ -106,8 +106,8 @@ namespace EndProject.Areas.Manage.Controllers
                 HotelId = exist.HotelId,
                 TourId = exist.TourId
             };
-            ViewBag.Hotels = new SelectList(_context.Hotels.ToList(), nameof(Position.Id), nameof(Position.Name));
-            ViewBag.Tours = new SelectList(_context.Tours.ToList(), nameof(Position.Id), nameof(Position.Name));
+            ViewBag.Hotels = new SelectList(_context.Hotels.ToList(), nameof(Hotel.Id), nameof(Hotel.Name));
+            ViewBag.Tours = new SelectList(_context.Tours.ToList(), nameof(Tour.Id), nameof(Tour.Name));
             return View(update);
         }
         [HttpPost]
@@ -136,8 +136,8 @@ namespace EndProject.Areas.Manage.Controllers
 
             if (!ModelState.IsValid)
             {
-                ViewBag.Hotels = new SelectList(_context.Hotels.ToList(), nameof(Position.Id), nameof(Position.Name));
-                ViewBag.Tours = new SelectList(_context.Tours.ToList(), nameof(Position.Id), nameof(Position.Name));
+                ViewBag.Hotels = new SelectList(_context.Hotels.ToList(), nameof(Hotel.Id), nameof(Hotel.Name));
+                ViewBag.Tours = new SelectList(_context.Tours.ToList(), nameof(Tour.Id), nameof(Tour.Name));
                 return View();
             }
             TourDay exist = _context.TourDays.Include(t => t.Hotel).Include(t => t.Tour).Include(t=>t.TourDaysImages).FirstOrDefault(t => t.Id == id);

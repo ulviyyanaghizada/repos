@@ -1,4 +1,4 @@
-﻿namespace EndProject.Models.ViewModels.Home
+﻿namespace EndProject.Models.ViewModels
 {
     public class HomeVM
     {
@@ -13,6 +13,10 @@
         public List<MostFrequent> MostFrequents { get; set; }
         public List<MostAnswer> MostAnswers { get; set; }
         public List<Condition> Conditions { get; set; }
+        public IEnumerable<Product> Products { get; set; }
+        public List<QuestionCategory> QuestionCategories { get; set; }
+        public List<Question> Questions { get; set; }
+        public Product Product { get; set; }
 
     }
 }

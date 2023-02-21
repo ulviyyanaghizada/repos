@@ -7,7 +7,7 @@ using EndProject.Models.AllTourInfo;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using EndProject.Migrations;
+
 
 namespace EndProject.Areas.Manage.Controllers
 {

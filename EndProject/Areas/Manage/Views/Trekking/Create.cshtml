@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+@model CreateTrekkingVM
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-body">
+            <h4 class="card-title">Add Trekking</h4>
+            <form class="forms-sample" enctype="multipart/form-data" method="post">
+                <div class="form-group">
+                    <label asp-for="Name">Name</label>
+                    <input asp-for="Name" class="form-control" placeholder="Name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title">Title</label>
+                    <input asp-for="Title" class="form-control" placeholder="Title">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description">Description</label>
+                    <input asp-for="Description" class="form-control" placeholder="Description">
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="GroupSize">GroupSize</label>
+                    <input asp-for="GroupSize" class="form-control" placeholder="GroupSize">
+                    <span asp-validation-for="GroupSize" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price">Price</label>
+                    <input asp-for="Price" class="form-control" placeholder="Price">
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Video"></label>
+                    <input accept="video/" asp-for="Video" class="form-control" id="exampleInputName1" placeholder="Video">
+                    <span asp-validation-for="Video" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PrimaryImage">PrimaryImage</label>
+                    <input accept="image/*" asp-for="PrimaryImage" class="form-control" placeholder="PrimaryImage">
+                    <span asp-validation-for="PrimaryImage" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OtherImages">OtherImages</label>
+                    <input accept="image/*" asp-for="OtherImages" class="form-control" placeholder="OtherImages">
+                    <span asp-validation-for="OtherImages" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DifficultiesIds"></label>
+                    <select class="form-control" asp-for="DifficultiesIds" asp-items="@ViewBag.Difficulties">
+                        <option disabled selected>Select a Difficulty</option>
+                    </select>
+                    <span asp-validation-for="DifficultiesIds" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TrFeaturesIds"></label>
+                    <select class="form-control" asp-for="TrFeaturesIds" asp-items="@ViewBag.TrFeatures">
+                        <option disabled selected>Select a feature</option>
+                    </select>
+                    <span asp-validation-for="TrFeaturesIds" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TrFacilitiesIds"></label>
+                    <select class="form-control" asp-for="TrFacilitiesIds" asp-items="@ViewBag.TrFacilities">
+                        <option disabled selected>Select a facilities</option>
+                    </select>
+                    <span asp-validation-for="TrFacilitiesIds" class="text-danger"></span>
+                </div>
+               
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <a asp-action="Index" class="btn btn-light">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

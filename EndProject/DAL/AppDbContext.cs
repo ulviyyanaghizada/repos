@@ -44,7 +44,20 @@ namespace EndProject.DAL
         public DbSet<TourFacilitie> TourFacilities { get; set; }
         public DbSet<TourFeature> TourFeatures { get; set; }
         public DbSet<TourImage> TourImages { get; set; }
-      //  public DbSet<Trekking> Trekking { get; set; }
+
+        public DbSet<Trekking> Trekkings { get; set; }
+        public DbSet<Difficulty> Difficulties { get; set; }
+        public DbSet<TrekkingDifficulty> TrekkingDifficulties { get; set; }
+        public DbSet<TrekkingFacilitie> TrekkingFacilities { get; set; }
+        public DbSet<TrekkingFeature> TrekkingFeatures { get; set; }
+        public DbSet<TrekkingImage> TrekkingImages { get; set; }
+        public DbSet<TrFacilitie> TrFacilities { get; set; }
+        public DbSet<TrFeature> TrFeatures { get; set; }
+        public DbSet<TrekkingDay> TrekkingDays { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<QuestionCategory> QuestionCategories { get; set; }
+
+        public DbSet<ContactUs> ContactUs { get; set; }
 
     }
 }

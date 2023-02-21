@@ -1,3 +1,4 @@
+using EndProject.Areas.Manage.Services;
 using EndProject.DAL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,9 @@ namespace EndProject
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("MSSQL"));
             });
+
+            builder.Services.AddScoped<AdminLayoutServices>();
+
             //builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
             //{
             //    opt.Password.RequireDigit = true;
@@ -22,6 +26,7 @@ namespace EndProject
             //    opt.User.RequireUniqueEmail = true;
             //}).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
             var app = builder.Build();
+
 
             app.UseStaticFiles();
             app.UseRouting();

@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<Tour>
+<div class="container">
+	<div class="card mt-5">
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered table-responsive">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Image</th>
+						<th>Video</th>
+						<th>Name</th>
+						<th>Title</th>
+						<th>Description</th>
+						<th>GroupSize</th>
+						<th>Price</th>
+						<th>Feature</th>
+						<th>Facilitie</th>
+						<th>Categories</th>
+						<th>Country</th>
+						<th colspan="2">Operation</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var p in Model)
+					{
+						<tr>
+							<td>@p.Id</td>
+							<td><img width="40" src="~/assets/images/tour/@p.TourImages?.FirstOrDefault(pi=>pi.IsPrimary == true)?.ImageUrl"> </td>
+							<td><video width="320" height="240" controls><source src="~/assets/images/tour/@p.VideoUrl"/></video> </td>
+							<td>@p.Name</td>
+							<td>@p.Title</td>
+							<td>@p.Description</td>
+							<td>@p.GroupSize</td>
+							<td>@p.Price</td>
+							<td>
+								@foreach (var feature in p?.TourFeatures.Where(pc => pc.TFeatureId == p.Id))
+								{
+									<span>@feature.TFeature.Title</span>
+								}
+							</td>
+							<td>
+								@foreach (var facilitie in p?.TourFacilities.Where(pc => pc.TFacilitieId == p.Id))
+								{
+									<span>@facilitie.TFacilitie.Title</span>
+								}
+							</td>
+
+							<td>
+								@foreach (var category in p?.TourCategories.Where(pc => pc.TCategoryId == p.Id))
+								{
+									<span>@category.TCategory.Name</span>
+								}
+							</td>
+							<td>@p.Country.Name</td>
+							<td><a class="btn btn-danger" asp-area="Manage" asp-controller="Tour" asp-action="Delete" asp-route-id="@p.Id">Delete</a></td>
+							<td><a class="btn btn-info" asp-area="Manage" asp-controller="Tour" asp-action="Update" asp-route-id="@p.Id">Update</a></td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+

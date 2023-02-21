@@ -13,9 +13,9 @@ namespace EndProject.Models.AllTourInfo
         public ICollection<TourFacilitie>? TourFacilities { get; set; }
         public ICollection<TourFeature>? TourFeatures { get; set; }
         public ICollection<TourDay> TourDays { get; set; }
+        public ICollection<TourCategory>? TourCategories { get; set; } 
         public int CountryId { get; set; }
         public Country? Country { get; set; }
-        public ICollection<TourCategory>? TourCategories { get; set; } 
 
     }
 }

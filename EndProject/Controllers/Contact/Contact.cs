@@ -1,8 +1,9 @@
 ﻿using EndProject.DAL;
-using EndProject.Models.ViewModels.Home;
+using EndProject.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using EndProject.Models;
-
+using EndProject.Models.ViewModels;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace EndProject.Controllers.Contact
 {
@@ -17,14 +18,30 @@ namespace EndProject.Controllers.Contact
         }
         public IActionResult Index()
 		{
-            HomeVM home = new HomeVM
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult postContact(ContactVM model)
+        {
+            if (model is null) { return BadRequest(); }
+            if (!ModelState.IsValid) return RedirectToAction("Index",model);
+
+            ContactUs contact = new ContactUs
             {
-                OfficeMaps = _context.OfficeMaps,
-                ContinentInfos = _context.ContinentInfos,
+                Email = model.Email,
+                FullName = model.FullName,
+                Message = model.Message,
+                subject = model.subject,
+                PhoneNumber = model.PhoneNumber,
 
             };
 
-            return View(home);
+            _context.ContactUs.Add(contact);
+            _context.SaveChanges();
+            return Ok(model);
         }
-	}
+    }
 }
+
