@@ -1,4 +1,6 @@
-﻿namespace EndProject.Models.ViewModels
+﻿using EndProject.Models.AllTourInfo;
+
+namespace EndProject.Models.ViewModels
 {
     public class HomeVM
     {
@@ -17,6 +19,8 @@
         public List<QuestionCategory> QuestionCategories { get; set; }
         public List<Question> Questions { get; set; }
         public Product Product { get; set; }
+        public ICollection<Continent> Continents { get; set; }
+        public ICollection<Country> Countires { get; set; }
 
     }
 }

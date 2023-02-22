@@ -2,6 +2,7 @@
 
 @{
     List<ContactUs> contacts = services.GetContacts();
+    int counter = 0;
 }
 
 
@@ -122,13 +123,16 @@
                         <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="mdi mdi-bell-outline"></i>
-                            <span class="badge bg-danger rounded-pill">3</span>
+                            @if (contacts is not null)
+                            {
+                                <span class="badge bg-danger rounded-pill">@contacts.Count()</span>
+                            }
                         </button>
                         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-notifications-dropdown">
                             <div class="p-3">
                                 <div class="row align-items-center">
                                     <div class="col">
-                                        <h5 class="m-0 font-size-16"> Notifications (258) </h5>
+                                        <h5 class="m-0 font-size-16"> Notifications (@contacts.Count()) </h5>
                                     </div>
                                 </div>
                             </div>
@@ -136,23 +140,28 @@
 
                                 @foreach (var item in contacts)
                                 {
-                                    <a href="" class="text-reset notification-item">
+                                    counter++;
+                                    <a asp-action="Details" asp-controller="ContactAdmin" asp-route-Id="@item.Id" class="text-reset notification-item">
                                         <div class="d-flex">
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar-xs">
                                                     <span class="avatar-title bg-success rounded-circle font-size-16">
-                                                        <i class="mdi mdi-cart-outline"></i>
+                                                        <i class="bi bi-person"></i>
                                                     </span>
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1">
-                                                <h6 class="mb-1">Your order is placed</h6>
+                                                <h6 class="mb-1">@item.FullName</h6>
                                                 <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">Dummy text of the printing and typesetting industry.</p>
+                                                    <p class="mb-1">@item.subject</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
+                                    if (counter == 5 )
+                                    {
+                                        break; 
+                                    }
                                 }
 
 

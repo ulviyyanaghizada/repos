@@ -21,8 +21,8 @@ namespace EndProject.Controllers.Contact
 
             return View();
         }
-
-        [HttpPost]
+        
+		[HttpPost]
         public IActionResult postContact(ContactVM model)
         {
             if (model is null) { return BadRequest(); }
@@ -40,7 +40,7 @@ namespace EndProject.Controllers.Contact
 
             _context.ContactUs.Add(contact);
             _context.SaveChanges();
-            return Ok(model);
+            return RedirectToAction("Index");
         }
     }
 }

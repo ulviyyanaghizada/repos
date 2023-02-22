@@ -23,8 +23,10 @@ namespace EndProject.Controllers.Home
                 Chooses = _context.Chooses.ToList(),
                 Agencies=_context.Agencies,
                 Brands=_context.Brands,
-                Products=_context.Products.Include(p=>p.ProductImages)
-            
+                Products=_context.Products.Include(p=>p.ProductImages),
+                Continents = _context.Continents.ToList(),
+                Countires = _context.Countries.Include(c => c.Tours).ToList(),
+
             };
 
             return View(home);

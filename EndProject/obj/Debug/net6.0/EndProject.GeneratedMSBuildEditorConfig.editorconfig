@@ -88,6 +88,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENvbmRpdGlvblxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/SysAdmin/Desktop/EndProject/EndProject/Areas/Manage/Views/ContactAdmin/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENvbnRhY3RBZG1pblxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/SysAdmin/Desktop/EndProject/EndProject/Areas/Manage/Views/ContactAdmin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENvbnRhY3RBZG1pblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

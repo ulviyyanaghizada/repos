@@ -8921,6 +8921,10 @@
       "PackagePath": "staticwebassets\\assets\\images\\brand\\f4f0c9ed-5c07-482a-a7e0-220ccab01651.pngpblogo.png"
     },
     {
+      "Id": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\campings.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\campings.svg"
+    },
+    {
       "Id": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\ce91dbc9-2437-471d-9ec2-0c2237974f70-baku-photo.jpg",
       "PackagePath": "staticwebassets\\assets\\images\\ce91dbc9-2437-471d-9ec2-0c2237974f70-baku-photo.jpg"
     },
@@ -9399,6 +9403,10 @@
     {
       "Id": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\resource\\390ad7b5-aff9-4a93-b5fe-c9461fd8048a.svgicon-2.svg",
       "PackagePath": "staticwebassets\\assets\\images\\resource\\390ad7b5-aff9-4a93-b5fe-c9461fd8048a.svgicon-2.svg"
+    },
+    {
+      "Id": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\resource\\3bddc7a8-3784-4d44-a751-06e9960dac25.svgcampings.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\resource\\3bddc7a8-3784-4d44-a751-06e9960dac25.svgcampings.svg"
     },
     {
       "Id": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\resource\\404-cloud-left.svg",
@@ -10231,6 +10239,34 @@
     {
       "Id": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\trefoil.png",
       "PackagePath": "staticwebassets\\assets\\images\\trefoil.png"
+    },
+    {
+      "Id": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\trekking\\1b41cb37-a24a-40bd-93ec-45e188cdfbba.jpgБез названия (2).jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\trekking\\1b41cb37-a24a-40bd-93ec-45e188cdfbba.jpgБез названия (2).jpg"
+    },
+    {
+      "Id": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\trekking\\6c444866-6dfb-461a-92e3-997cbf4feef1.jpgБез названия.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\trekking\\6c444866-6dfb-461a-92e3-997cbf4feef1.jpgБез названия.jpg"
+    },
+    {
+      "Id": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\trekking\\96a49077-8f9e-4b51-a05f-08aeae4a3fd6.mp4videoplayback.mp4",
+      "PackagePath": "staticwebassets\\assets\\images\\trekking\\96a49077-8f9e-4b51-a05f-08aeae4a3fd6.mp4videoplayback.mp4"
+    },
+    {
+      "Id": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\trekking\\e8526355-920c-4e34-94c0-9f44991f299a.jpgБез названия (1).jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\trekking\\e8526355-920c-4e34-94c0-9f44991f299a.jpgБез названия (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\Без названия (1).jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Без названия (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\Без названия (2).jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Без названия (2).jpg"
+    },
+    {
+      "Id": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\Без названия.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Без названия.jpg"
     },
     {
       "Id": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\js\\appear.js",

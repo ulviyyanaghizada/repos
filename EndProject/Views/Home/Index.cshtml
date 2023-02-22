@@ -256,89 +256,24 @@
             <div class="carousel-box">
                 <div class="trending-carousel owl-theme owl-carousel">
                     <!--Block-->
+                @foreach (var country in Model.Countires)
+                {
+                    
                     <div class="dest-block-two">
                         <div class="inner-box">
-                            <div class="image-box"><a href="~/assets/#"><img src="~/assets/images/resource/gallery-7.jpg" alt=""></a></div>
+                            <div class="image-box"><a href="~/assets/#"><img src="~/assets/images/country/@country.ImageUrl" alt=""></a></div>
                             <div class="hvr-box">
                                 <div class="cap-box">
                                     <div class="cap-inner clearfix">
-                                        <h4><a href="~/assets/#">Rajasthan</a></h4>
-                                        <div class="tour-count"><span>15 Tours</span></div>
+                                        <h4><a asp-controller="Destinations2" asp-action="Index" asp-route-id="@country.Id">@country.Name</a></h4>
+                                        <div class="tour-count"><span>@country.Tours.Count Tours</span></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--Block-->
-                    <div class="dest-block-two">
-                        <div class="inner-box">
-                            <div class="image-box"><a href="~/assets/#"><img src="~/assets/images/resource/gallery-8.jpg" alt=""></a></div>
-                            <div class="hvr-box">
-                                <div class="cap-box">
-                                    <div class="cap-inner clearfix">
-                                        <h4><a href="~/assets/#">Rajasthan</a></h4>
-                                        <div class="tour-count"><span>15 Tours</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Block-->
-                    <div class="dest-block-two">
-                        <div class="inner-box">
-                            <div class="image-box"><a href="~/assets/#"><img src="~/assets/images/resource/gallery-9.jpg" alt=""></a></div>
-                            <div class="hvr-box">
-                                <div class="cap-box">
-                                    <div class="cap-inner clearfix">
-                                        <h4><a href="~/assets/#">Rajasthan</a></h4>
-                                        <div class="tour-count"><span>15 Tours</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Block-->
-                    <div class="dest-block-two">
-                        <div class="inner-box">
-                            <div class="image-box"><a href="~/assets/#"><img src="~/assets/images/resource/gallery-7.jpg" alt=""></a></div>
-                            <div class="hvr-box">
-                                <div class="cap-box">
-                                    <div class="cap-inner clearfix">
-                                        <h4><a href="~/assets/#">Rajasthan</a></h4>
-                                        <div class="tour-count"><span>15 Tours</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Block-->
-                    <div class="dest-block-two">
-                        <div class="inner-box">
-                            <div class="image-box"><a href="~/assets/#"><img src="~/assets/images/resource/gallery-8.jpg" alt=""></a></div>
-                            <div class="hvr-box">
-                                <div class="cap-box">
-                                    <div class="cap-inner clearfix">
-                                        <h4><a href="~/assets/#">Rajasthan</a></h4>
-                                        <div class="tour-count"><span>15 Tours</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Block-->
-                    <div class="dest-block-two">
-                        <div class="inner-box">
-                            <div class="image-box"><a href="~/assets/#"><img src="~/assets/images/resource/gallery-9.jpg" alt=""></a></div>
-                            <div class="hvr-box">
-                                <div class="cap-box">
-                                    <div class="cap-inner clearfix">
-                                        <h4><a href="~/assets/#">Rajasthan</a></h4>
-                                        <div class="tour-count"><span>15 Tours</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                }
+                    
                 </div>
             </div>
         </div>

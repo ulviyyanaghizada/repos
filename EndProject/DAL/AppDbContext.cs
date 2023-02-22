@@ -1,10 +1,12 @@
 ﻿using EndProject.Models;
 using EndProject.Models.AllTourInfo;
+using EndProject.Models.AppUser;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace EndProject.DAL
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext:IdentityDbContext
     {
         public AppDbContext(DbContextOptions options) : base(options) { }
         public DbSet<Entry> Entries { get; set; }
@@ -56,6 +58,7 @@ namespace EndProject.DAL
         public DbSet<TrekkingDay> TrekkingDays { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<QuestionCategory> QuestionCategories { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
 
         public DbSet<ContactUs> ContactUs { get; set; }
 

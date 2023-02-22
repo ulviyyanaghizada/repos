@@ -1,5 +1,7 @@
 using EndProject.Areas.Manage.Services;
 using EndProject.DAL;
+using EndProject.Models.AppUser;
+using EndProject.Models.EmailModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -17,14 +19,22 @@ namespace EndProject
                 options.UseSqlServer(builder.Configuration.GetConnectionString("MSSQL"));
             });
 
-            builder.Services.AddScoped<AdminLayoutServices>();
+            builder.Services.AddHttpContextAccessor();
 
-            //builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
-            //{
-            //    opt.Password.RequireDigit = true;
-            //    opt.Password.RequiredLength = 6;
-            //    opt.User.RequireUniqueEmail = true;
-            //}).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+            builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
+            {
+                opt.Password.RequireDigit = true;
+                opt.Password.RequireNonAlphanumeric = false;
+                opt.Password.RequiredLength = 5;
+                opt.Lockout.AllowedForNewUsers = true;
+                opt.SignIn.RequireConfirmedEmail = true;
+                opt.User.RequireUniqueEmail = true;
+            }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+
+          //  builder.Services.AddScoped<AdminLayoutService>();
+        //    builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+
+            builder.Services.AddScoped<AdminLayoutServices>();
             var app = builder.Build();
 
 
