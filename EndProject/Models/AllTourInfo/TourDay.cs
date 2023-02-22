@@ -2,7 +2,7 @@
 
 namespace EndProject.Models.AllTourInfo
 {
-    public class TourDay:BaseEntity
+    public class TourDay:BaseNameEntity
     {
         public int TourId { get; set; }
         public  Tour? Tour { get; set; }
@@ -11,6 +11,7 @@ namespace EndProject.Models.AllTourInfo
         public ICollection<TourDaysImage>? TourDaysImages { get; set; }
         public int HotelId { get; set; }
         public Hotel? Hotel { get; set; }
+
 
     }
 }

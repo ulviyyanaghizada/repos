@@ -47,13 +47,7 @@
 									<span>@facilitie.TrFacilitie.Title</span>
 								}
 							</td>
-
-							<td>
-								@foreach (var difficulties in p?.TrekkingDifficulties.Where(pc => pc.DifficultyId == p.Id))
-								{
-									<span>@difficulties.Difficulty.Name</span>
-								}
-							</td>
+							<td>@p.Difficulty.Name</td>
 							<td><a class="btn btn-danger" asp-area="Manage" asp-controller="Trekking" asp-action="Delete" asp-route-id="@p.Id">Delete</a></td>
 							<td><a class="btn btn-info" asp-area="Manage" asp-controller="Trekking" asp-action="Update" asp-route-id="@p.Id">Update</a></td>
 						</tr>

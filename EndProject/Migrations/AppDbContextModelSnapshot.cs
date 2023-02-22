@@ -341,6 +341,10 @@ namespace EndProject.Migrations
                     b.Property<int>("HotelId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -501,6 +505,9 @@ namespace EndProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("DifficultyId")
+                        .HasColumnType("int");
+
                     b.Property<byte>("GroupSize")
                         .HasColumnType("tinyint");
 
@@ -520,6 +527,8 @@ namespace EndProject.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DifficultyId");
 
                     b.ToTable("Trekkings");
                 });
@@ -544,29 +553,6 @@ namespace EndProject.Migrations
                     b.HasIndex("TrekkingId");
 
                     b.ToTable("TrekkingDays");
-                });
-
-            modelBuilder.Entity("EndProject.Models.AllTourInfo.TrekkingDifficulty", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("DifficultyId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TrekkingId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DifficultyId");
-
-                    b.HasIndex("TrekkingId");
-
-                    b.ToTable("TrekkingDifficulties");
                 });
 
             modelBuilder.Entity("EndProject.Models.AllTourInfo.TrekkingFacilitie", b =>
@@ -1572,6 +1558,17 @@ namespace EndProject.Migrations
                     b.Navigation("Tour");
                 });
 
+            modelBuilder.Entity("EndProject.Models.AllTourInfo.Trekking", b =>
+                {
+                    b.HasOne("EndProject.Models.AllTourInfo.Difficulty", "Difficulty")
+                        .WithMany("Trekkings")
+                        .HasForeignKey("DifficultyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Difficulty");
+                });
+
             modelBuilder.Entity("EndProject.Models.AllTourInfo.TrekkingDay", b =>
                 {
                     b.HasOne("EndProject.Models.AllTourInfo.Trekking", "Trekking")
@@ -1579,25 +1576,6 @@ namespace EndProject.Migrations
                         .HasForeignKey("TrekkingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Trekking");
-                });
-
-            modelBuilder.Entity("EndProject.Models.AllTourInfo.TrekkingDifficulty", b =>
-                {
-                    b.HasOne("EndProject.Models.AllTourInfo.Difficulty", "Difficulty")
-                        .WithMany("TrekkingDifficulties")
-                        .HasForeignKey("DifficultyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EndProject.Models.AllTourInfo.Trekking", "Trekking")
-                        .WithMany("TrekkingDifficulties")
-                        .HasForeignKey("TrekkingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Difficulty");
 
                     b.Navigation("Trekking");
                 });
@@ -1823,7 +1801,7 @@ namespace EndProject.Migrations
 
             modelBuilder.Entity("EndProject.Models.AllTourInfo.Difficulty", b =>
                 {
-                    b.Navigation("TrekkingDifficulties");
+                    b.Navigation("Trekkings");
                 });
 
             modelBuilder.Entity("EndProject.Models.AllTourInfo.Hotel", b =>
@@ -1884,8 +1862,6 @@ namespace EndProject.Migrations
             modelBuilder.Entity("EndProject.Models.AllTourInfo.Trekking", b =>
                 {
                     b.Navigation("TrekkingDays");
-
-                    b.Navigation("TrekkingDifficulties");
 
                     b.Navigation("TrekkingFacilities");
 

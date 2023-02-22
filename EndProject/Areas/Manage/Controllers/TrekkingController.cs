@@ -1,4 +1,6 @@
-﻿using EndProject.DAL;
+﻿using EndProject.Controllers.Trekking;
+using EndProject.DAL;
+using EndProject.Models;
 using EndProject.Models.AllTourInfo;
 using EndProject.Models.ViewModels;
 using EndProject.Utilities.Extensions;
@@ -21,14 +23,14 @@ namespace EndProject.Areas.Manage.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.Trekkings.Include(t => t.TrekkingImages).Include(t => t.TrekkingDifficulties).ThenInclude(tc => tc.Difficulty).
+            return View(_context.Trekkings.Include(t => t.TrekkingImages).Include(t => t.Difficulty).
                 Include(t => t.TrekkingFeatures).ThenInclude(tc => tc.TrFeature).
                 Include(t => t.TrekkingFacilities).ThenInclude(tc => tc.TrFacilitie));
         }
         public IActionResult Delete(int? id)
         {
             if (id is null || id == 0) return BadRequest();
-            Trekking exist = _context.Trekkings.Include(t => t.TrekkingDifficulties)
+            Trekking exist = _context.Trekkings.Include(t => t.Difficulty)
                 .Include(t => t.TrekkingFeatures).Include(t => t.TrekkingFacilities)
                 .Include(t => t.TrekkingImages).FirstOrDefault(t => t.Id == id);
             if (exist is null) return NotFound();
@@ -40,7 +42,6 @@ namespace EndProject.Areas.Manage.Controllers
             _context.TrekkingImages.RemoveRange(exist.TrekkingImages);
             _context.TrekkingFeatures.RemoveRange(exist.TrekkingFeatures);
             _context.TrekkingFacilities.RemoveRange(exist.TrekkingFacilities);
-            _context.TrekkingDifficulties.RemoveRange(exist.TrekkingDifficulties);
             _context.Trekkings.Remove(exist);
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
@@ -49,8 +50,9 @@ namespace EndProject.Areas.Manage.Controllers
         {
             ViewBag.TrFacilities = new SelectList(_context.TrFacilities, nameof(TrFacilitie.Id), nameof(TrFacilitie.Title));
             ViewBag.TrFeatures = new SelectList(_context.TrFeatures, nameof(TrFeature.Id), nameof(TrFeature.Title));
-            ViewBag.Difficulties = new SelectList(_context.Difficulties, nameof(Difficulty.Id), nameof(Difficulty.Name));
-            return View();
+			ViewBag.Difficulties = new SelectList(_context.Difficulties.ToList(), nameof(Difficulty.Id), nameof(Difficulty.Name));
+
+			return View();
         }
         [HttpPost]
         public IActionResult Create(CreateTrekkingVM trekkingVM)
@@ -94,26 +96,21 @@ namespace EndProject.Areas.Manage.Controllers
                     break;
                 }
             }
-            foreach (int difficultyId in (trekkingVM.DifficultiesIds ?? new List<int>()))
-            {
-                if (!_context.Difficulties.Any(c => c.Id == difficultyId))
-                {
-                    ModelState.AddModelError("DifficultiesIds", "There is no matched difficulty with this id!");
-                    break;
-                }
-            }
-           
-            if (!ModelState.IsValid)
+			if (!_context.Difficulties.Any(p => p.Id == trekkingVM.DifficultyId))
+			{
+				ModelState.AddModelError("DifficultyId", "Bu Id'li difficult yoxdur");
+			}
+
+			if (!ModelState.IsValid)
             {
                 ViewBag.TrFacilities = new SelectList(_context.TrFacilities, nameof(TrFacilitie.Id), nameof(TrFacilitie.Title));
                 ViewBag.TrFeatures = new SelectList(_context.TrFeatures, nameof(TrFeature.Id), nameof(TrFeature.Title));
-                ViewBag.Difficulties = new SelectList(_context.Difficulties, nameof(Difficulty.Id), nameof(Difficulty.Name));
+				ViewBag.Difficulties = new SelectList(_context.Difficulties.ToList(), nameof(Difficulty.Id), nameof(Difficulty.Name));
 
-                return View();
+				return View();
             }
 
             var facilities = _context.TrFacilities.Where(f => trekkingVM.TrFacilitiesIds.Contains(f.Id));
-            var difficulties = _context.Difficulties.Where(c => trekkingVM.DifficultiesIds.Contains(c.Id));
             var features = _context.TrFeatures.Where(f => trekkingVM.TrFeaturesIds.Contains(f.Id));
             Trekking trekking = new Trekking
             {
@@ -122,8 +119,9 @@ namespace EndProject.Areas.Manage.Controllers
                 Description = trekkingVM.Description,
                 Name = trekkingVM.Name,
                 GroupSize = trekkingVM.GroupSize,
-                VideoUrl = video.SaveFile(Path.Combine(_env.WebRootPath, "assets", "images", "trekking"))
-            };
+                VideoUrl = video.SaveFile(Path.Combine(_env.WebRootPath, "assets", "images", "trekking")),
+				DifficultyId = trekkingVM.DifficultyId
+			};
             List<TrekkingImage> images = new List<TrekkingImage>();
             images.Add(new TrekkingImage
             {
@@ -151,10 +149,7 @@ namespace EndProject.Areas.Manage.Controllers
             {
                 _context.TrekkingFacilities.Add(new TrekkingFacilitie { Trekking = trekking, TrFacilitieId = item.Id });
             }
-            foreach (var item in difficulties)
-            {
-                _context.TrekkingDifficulties.Add(new TrekkingDifficulty { Trekking = trekking, DifficultyId = item.Id });
-            }
+           
 
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
@@ -162,7 +157,7 @@ namespace EndProject.Areas.Manage.Controllers
         public IActionResult Update(int? id)
         {
             if (id is null || id == 0) return BadRequest();
-            var trekking = _context.Trekkings.Include(t => t.TrekkingDifficulties).Include(t => t.TrekkingFacilities).Include(t => t.TrekkingFeatures)
+            var trekking = _context.Trekkings.Include(t => t.Difficulty).Include(t => t.TrekkingFacilities).Include(t => t.TrekkingFeatures)
                 .Include(t => t.TrekkingImages).FirstOrDefault(p => p.Id == id);
             if (trekking is null) return NotFound();
             UpdateTrekkingVM update = new UpdateTrekkingVM
@@ -174,13 +169,14 @@ namespace EndProject.Areas.Manage.Controllers
                 TrekkingImages = trekking.TrekkingImages.ToList(),
                 TrFeaturesIds = trekking.TrekkingFeatures.Select(pc => pc.TrFeatureId).ToList(),
                 TrFacilitiesIds = trekking.TrekkingFacilities.Select(pc => pc.TrFacilitieId).ToList(),
-                DifficultiesIds = trekking.TrekkingDifficulties.Select(pc => pc.DifficultyId).ToList(),
                 VideoUrl = trekking.VideoUrl,
-            };
+				DifficultyId = trekking.DifficultyId
+			};
             ViewBag.TrFacilities = new SelectList(_context.TrFacilities, nameof(TrFacilitie.Id), nameof(TrFacilitie.Title));
             ViewBag.TrFeatures = new SelectList(_context.TrFeatures, nameof(TrFeature.Id), nameof(TrFeature.Title));
-            ViewBag.Difficulties = new SelectList(_context.Difficulties, nameof(Difficulty.Id), nameof(Difficulty.Name));
-            ViewBag.Video = trekking.VideoUrl;
+			ViewBag.Difficulties = new SelectList(_context.Difficulties.ToList(), nameof(Difficulty.Id), nameof(Difficulty.Name));
+
+			ViewBag.Video = trekking.VideoUrl;
 
             return View(update);
         }
@@ -212,14 +208,7 @@ namespace EndProject.Areas.Manage.Controllers
                     break;
                 }
             }
-            foreach (int difficultyId in (update.DifficultiesIds ?? new List<int>()))
-            {
-                if (!_context.Difficulties.Any(c => c.Id == difficultyId))
-                {
-                    ModelState.AddModelError("DifficultiesIds", "There is no matched difficulty with this id!");
-                    break;
-                }
-            }
+           
             var primaryImg = update.PrimaryImage;
             var otherImgs = update.OtherImages ?? new List<IFormFile>();
             string result = primaryImg?.CheckValidate("image/", 600);
@@ -231,16 +220,21 @@ namespace EndProject.Areas.Manage.Controllers
                     ModelState.AddModelError("OtherImages", result);
                 }
             }
-            if (!ModelState.IsValid)
+			if (!_context.Difficulties.Any(p => p.Id == update.DifficultyId))
+			{
+				ModelState.AddModelError("DifficultyId", "Bu Id'li difficultie yoxdur");
+			}
+			if (!ModelState.IsValid)
             {
                 ViewBag.TrFacilities = new SelectList(_context.TrFacilities, nameof(TrFacilitie.Id), nameof(TrFacilitie.Title));
                 ViewBag.TrFeatures = new SelectList(_context.TrFeatures, nameof(TrFeature.Id), nameof(TrFeature.Title));
-                ViewBag.Difficulties = new SelectList(_context.Difficulties, nameof(Difficulty.Id), nameof(Difficulty.Name));
-                ViewBag.Video = _context.Trekkings.FirstOrDefault(t => t.Id == id).VideoUrl;
+				ViewBag.Difficulties = new SelectList(_context.Difficulties.ToList(), nameof(Difficulty.Id), nameof(Difficulty.Name));
+
+				ViewBag.Video = _context.Trekkings.FirstOrDefault(t => t.Id == id).VideoUrl;
                 return View();
             }
-            var trekking = _context.Trekkings.Include(t => t.TrekkingFeatures).Include(t => t.TrekkingFacilities).Include(t => t.TrekkingDifficulties)
-                .Include(p => p.TrekkingImages).FirstOrDefault(p => p.Id == id);
+            var trekking = _context.Trekkings.Include(t => t.TrekkingFeatures).Include(t => t.TrekkingFacilities)
+                .Include(p => p.TrekkingImages).Include(t=>t.Difficulty).FirstOrDefault(p => p.Id == id);
             if (trekking is null) return NotFound();
 
             if (video != null)
@@ -265,21 +259,7 @@ namespace EndProject.Areas.Manage.Controllers
             {
                 _context.TrekkingFacilities.Add(new TrekkingFacilitie { Trekking = trekking, TrFacilitieId = facilitieId });
             }
-            foreach (var item in trekking.TrekkingDifficulties)
-            {
-                if (update.DifficultiesIds.Contains(item.DifficultyId))
-                {
-                    update.DifficultiesIds.Remove(item.DifficultyId);
-                }
-                else
-                {
-                    _context.TrekkingDifficulties.Remove(item);
-                }
-            }
-            foreach (var difficultyId in update.DifficultiesIds)
-            {
-                _context.TrekkingDifficulties.Add(new TrekkingDifficulty { Trekking = trekking, DifficultyId = difficultyId });
-            }
+         
 
             foreach (var item in trekking.TrekkingFeatures)
             {
@@ -344,7 +324,8 @@ namespace EndProject.Areas.Manage.Controllers
             trekking.Name = update.Name;
             trekking.Price = update.Price;
             trekking.GroupSize = update.GroupSize;
-            _context.SaveChanges();
+			trekking.DifficultyId = update.DifficultyId;
+			_context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
     }

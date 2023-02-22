@@ -165,23 +165,22 @@
                     <!--Block-->
                     @foreach (var trekking in Model.Trekkings)
                 {
-                    
-                    <div class="trek-block-one style-two mix all @trekking. col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                    <div class="trek-block-one style-two mix all @trekking.Difficulty.Name col-xl-4 col-lg-6 col-md-6 col-sm-12">
                         <div class="inner-box">
                             <div class="image-box">
-                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/resource/f-image-1.jpg" alt="" title=""></a></div>
+                                <div class="image"><a href="~/assets/#"><img src="~/assets/images/trekking/@trekking.TrekkingImages?.FirstOrDefault(pi=>pi.IsPrimary == true)?.ImageUrl" alt="" title=""></a></div>
                                 <div class="price"><span>$120</span></div>
                                 <div class="info">
-                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
+                                    <span class="i-block"><i class="icon far fa-clock"></i> @trekking.TrekkingDays.Count days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
                                 </div>
                             </div>
                             <div class="lower-content">
-                                <h4><a href="~/assets/#">Moscow Red City Land</a></h4>
+                                <h4><a href="~/assets/#">@trekking.Name</a></h4>
                                 <div class="ratings clearfix">
                                     <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
                                     <div class="rev"><a href="~/assets/#">05 Review</a></div>
                                 </div>
-                                <div class="text">Richly varied landscapes, luxurious accommodation and a wide range of wild experiences await you. </div>
+                                <div class="text">@trekking.Title </div>
                             </div>
                             <div class="bottom-box clearfix">
                                 <div class="more-link"><a href="~/assets/#" class="theme-btn"><span>View Details <i class="icon"><img src="~/assets/images/icons/logo-icon.svg" alt=""></i></span></a></div>

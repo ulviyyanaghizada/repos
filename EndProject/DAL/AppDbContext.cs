@@ -49,7 +49,6 @@ namespace EndProject.DAL
 
         public DbSet<Trekking> Trekkings { get; set; }
         public DbSet<Difficulty> Difficulties { get; set; }
-        public DbSet<TrekkingDifficulty> TrekkingDifficulties { get; set; }
         public DbSet<TrekkingFacilitie> TrekkingFacilities { get; set; }
         public DbSet<TrekkingFeature> TrekkingFeatures { get; set; }
         public DbSet<TrekkingImage> TrekkingImages { get; set; }

@@ -4,6 +4,7 @@ namespace EndProject.Models.AllTourInfo
 {
     public class Difficulty:BaseNameEntity
     {
-        public ICollection<TrekkingDifficulty>? TrekkingDifficulties { get; set; }
-    }
+		public ICollection<Trekking>? Trekkings { get; set; }
+
+	}
 }

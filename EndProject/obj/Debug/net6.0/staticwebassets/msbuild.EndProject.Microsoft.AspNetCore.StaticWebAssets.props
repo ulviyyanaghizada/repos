@@ -37824,6 +37824,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\resource\0c3c841c-2846-466f-9800-e3015b53ed1a.svgicon-1.svg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\resource\2cd8ee57-23c6-44df-ab34-b3185586bdec.svg89daec56-9165-423a-8320-9cbcc19b0c6b.svgeurope-map.svg))">
+      <SourceType>Package</SourceType>
+      <SourceId>EndProject</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EndProject</BasePath>
+      <RelativePath>assets/images/resource/2cd8ee57-23c6-44df-ab34-b3185586bdec.svg89daec56-9165-423a-8320-9cbcc19b0c6b.svgeurope-map.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\resource\2cd8ee57-23c6-44df-ab34-b3185586bdec.svg89daec56-9165-423a-8320-9cbcc19b0c6b.svgeurope-map.svg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\resource\390ad7b5-aff9-4a93-b5fe-c9461fd8048a.svgicon-2.svg))">
       <SourceType>Package</SourceType>
       <SourceId>EndProject</SourceId>
@@ -38351,6 +38367,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\resource\author-2.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\resource\c3fd0dbb-905b-4b72-bca1-d9b081d6a7eb.svgfd5c5191-573b-4182-bd93-6c62b34d77cb.svgasia-map.svg))">
+      <SourceType>Package</SourceType>
+      <SourceId>EndProject</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EndProject</BasePath>
+      <RelativePath>assets/images/resource/c3fd0dbb-905b-4b72-bca1-d9b081d6a7eb.svgfd5c5191-573b-4182-bd93-6c62b34d77cb.svgasia-map.svg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\resource\c3fd0dbb-905b-4b72-bca1-d9b081d6a7eb.svgfd5c5191-573b-4182-bd93-6c62b34d77cb.svgasia-map.svg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\resource\dotted-pattern-1.png))">
       <SourceType>Package</SourceType>
@@ -41296,6 +41328,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trefoil.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\031b0824-de0c-40a3-b757-07d684f2ebaa.jpg1c921e09-da99-4fef-baab-71a13b1bc5d7.jpgteam-3.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>EndProject</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EndProject</BasePath>
+      <RelativePath>assets/images/trekking/031b0824-de0c-40a3-b757-07d684f2ebaa.jpg1c921e09-da99-4fef-baab-71a13b1bc5d7.jpgteam-3.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\031b0824-de0c-40a3-b757-07d684f2ebaa.jpg1c921e09-da99-4fef-baab-71a13b1bc5d7.jpgteam-3.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\174ab006-1a65-4342-88e2-add977ee62f6.mp4videoplayback.mp4))">
+      <SourceType>Package</SourceType>
+      <SourceId>EndProject</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EndProject</BasePath>
+      <RelativePath>assets/images/trekking/174ab006-1a65-4342-88e2-add977ee62f6.mp4videoplayback.mp4</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\174ab006-1a65-4342-88e2-add977ee62f6.mp4videoplayback.mp4))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\1b41cb37-a24a-40bd-93ec-45e188cdfbba.jpgБез названия (2).jpg))">
       <SourceType>Package</SourceType>
       <SourceId>EndProject</SourceId>
@@ -41328,6 +41392,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\6c444866-6dfb-461a-92e3-997cbf4feef1.jpgБез названия.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\845f9792-4302-4fab-892b-c4c236d0dc01.jpg945d2cbc-663e-4435-a71b-ec38d5f0ec7c.jpg1c921e09-da99-4fef-baab-71a13b1bc5d7.jpgteam-3.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>EndProject</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EndProject</BasePath>
+      <RelativePath>assets/images/trekking/845f9792-4302-4fab-892b-c4c236d0dc01.jpg945d2cbc-663e-4435-a71b-ec38d5f0ec7c.jpg1c921e09-da99-4fef-baab-71a13b1bc5d7.jpgteam-3.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\845f9792-4302-4fab-892b-c4c236d0dc01.jpg945d2cbc-663e-4435-a71b-ec38d5f0ec7c.jpg1c921e09-da99-4fef-baab-71a13b1bc5d7.jpgteam-3.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\96a49077-8f9e-4b51-a05f-08aeae4a3fd6.mp4videoplayback.mp4))">
       <SourceType>Package</SourceType>
       <SourceId>EndProject</SourceId>
@@ -41344,6 +41424,54 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\96a49077-8f9e-4b51-a05f-08aeae4a3fd6.mp4videoplayback.mp4))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\a4f042db-9f50-4097-be27-4a4fb6c6f41b.jpgab2f4f74-1e58-426b-b64e-b5498efad9ab.jpgPeter-DeRose-DDS-InspireDentalGroup-370x410.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>EndProject</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EndProject</BasePath>
+      <RelativePath>assets/images/trekking/a4f042db-9f50-4097-be27-4a4fb6c6f41b.jpgab2f4f74-1e58-426b-b64e-b5498efad9ab.jpgPeter-DeRose-DDS-InspireDentalGroup-370x410.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\a4f042db-9f50-4097-be27-4a4fb6c6f41b.jpgab2f4f74-1e58-426b-b64e-b5498efad9ab.jpgPeter-DeRose-DDS-InspireDentalGroup-370x410.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\ba8d0d1a-8656-47bf-ae09-8eeeabbbb0ee.jpg2c82fea8-fd86-4967-8a5a-a701261069d6.jpgteam-1.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>EndProject</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EndProject</BasePath>
+      <RelativePath>assets/images/trekking/ba8d0d1a-8656-47bf-ae09-8eeeabbbb0ee.jpg2c82fea8-fd86-4967-8a5a-a701261069d6.jpgteam-1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\ba8d0d1a-8656-47bf-ae09-8eeeabbbb0ee.jpg2c82fea8-fd86-4967-8a5a-a701261069d6.jpgteam-1.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\e283ac77-8771-4868-8eea-0805a4552a47.jpgБез названия (1).jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>EndProject</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EndProject</BasePath>
+      <RelativePath>assets/images/trekking/e283ac77-8771-4868-8eea-0805a4552a47.jpgБез названия (1).jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\e283ac77-8771-4868-8eea-0805a4552a47.jpgБез названия (1).jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\e8526355-920c-4e34-94c0-9f44991f299a.jpgБез названия (1).jpg))">
       <SourceType>Package</SourceType>
       <SourceId>EndProject</SourceId>
@@ -41359,6 +41487,54 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\e8526355-920c-4e34-94c0-9f44991f299a.jpgБез названия (1).jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\e869acac-88ff-4713-8ec9-b959045c5373.jpgБез названия.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>EndProject</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EndProject</BasePath>
+      <RelativePath>assets/images/trekking/e869acac-88ff-4713-8ec9-b959045c5373.jpgБез названия.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\e869acac-88ff-4713-8ec9-b959045c5373.jpgБез названия.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\f59452d6-b0f5-4b11-bd8e-b5481538a93e.jpgБез названия (2).jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>EndProject</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EndProject</BasePath>
+      <RelativePath>assets/images/trekking/f59452d6-b0f5-4b11-bd8e-b5481538a93e.jpgБез названия (2).jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\f59452d6-b0f5-4b11-bd8e-b5481538a93e.jpgБез названия (2).jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\fb47b00e-cb5d-4206-8674-e2dc14025126.mp4videoplayback.mp4))">
+      <SourceType>Package</SourceType>
+      <SourceId>EndProject</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EndProject</BasePath>
+      <RelativePath>assets/images/trekking/fb47b00e-cb5d-4206-8674-e2dc14025126.mp4videoplayback.mp4</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\trekking\fb47b00e-cb5d-4206-8674-e2dc14025126.mp4videoplayback.mp4))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\Без названия (1).jpg))">
       <SourceType>Package</SourceType>
