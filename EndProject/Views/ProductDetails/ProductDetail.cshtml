@@ -148,12 +148,12 @@
                                 <div class="slider-box">
                                     <div class="shop-single-carousel" id="shop-single-carousel">
                                         <!--Slide Block-->
-                                        @foreach (var item in Model.Products)
+                                        @foreach (var item in Model.Product.ProductImages)
                                     {
                                         <div class="slide-block">
                                             <div class="inner-box">
-                                                <div class="image"><img src="~/assets/images/product" alt=""></div>
-                                                <a href="~/assets/images/resource/shop/shop-single-1.jpg" class="zoom-btn lightbox-image"><img src="~/assets/images/icons/zoom-2.svg" alt=""></a>
+                                                <div class="image"><img src="~/assets/images/product/@item.ImageUrl" alt=""></div>
+                                           @*     <a href="~/assets/images/product/@item.ImageUrl class="zoom-btn lightbox-image"><img src="~/assets/images/icons/zoom-2.svg" alt=""></a>*@
                                             </div>
                                         </div>
                                     }
@@ -161,13 +161,13 @@
 
                                     </div>
                                 </div>
-                                <div class="pagers-box">
+                           @*     <div class="pagers-box">
                                     <div class="pager-two clearfix">
-                                        <a href="~/assets/" class="pager-item active" data-slide-index="0"><div class="image"><img src="~/assets/images/resource/shop/shop-thumb-1.jpg" alt=""></div></a>
+                                        <a href="~/assets/" class="pager-item active" data-slide-index="0"><div class="image"><img src="~/assets/images/resource//shop-thumb-1.jpg" alt=""></div></a>
                                         <a href="~/assets/" class="pager-item" data-slide-index="1"><div class="image"><img src="~/assets/images/resource/shop/shop-thumb-2.jpg" alt=""></div></a>
                                         <a href="~/assets/" class="pager-item" data-slide-index="2"><div class="image"><img src="~/assets/images/resource/shop/shop-thumb-3.jpg" alt=""></div></a>
                                     </div>
-                                </div>
+                                </div>*@
 
                             </div>
                         </div>
@@ -175,7 +175,7 @@
                     <div class="content-column col-lg-6 col-md-12 col-sm-12">
                         <div class="product-details-content">
                             <div class="avail"><span>In Stock</span></div>
-                            <h4>Smart Air Bag Travel</h4>
+                            <h4>@Model.Product.Title</h4>
                             <ul class="rating-box clearfix">
                                 <li><i class="fas fa-star"></i></li>
                                 <li><i class="fas fa-star"></i></li>
@@ -184,12 +184,18 @@
                                 <li><i class="fas fa-star empty"></i></li>
                             </ul>
                             <div class="reviews"><a href="~/assets/#">(05 Review)</a></div>
-                            <div class="item-price"><span>$225.00</span></div>
+                            <div class="item-price"><span>$@Model.Product.CostPrice</span></div>
                             <div class="share"><a href="~/assets/shop-single.html"><i class="flaticon-share-1"></i></a></div>
-                            <div class="text">jhghjgkbhjgbhjbghjbhjbProduTitbfle</div>
+                            <div class="text">@Model.Product.Description.Substring(0,Model.Product.Description.Length / 2)</div>
                             <div class="color-range clearfix">
-                                <div class="c-title">Color :</div>
-                                <div class="colors clearfix"><span class="clr clr-one"></span><span class="clr clr-two"></span><span class="clr clr-three"></span><span class="clr clr-four"></span></div>
+                                <div class="c-title">Color :   
+
+                                       @foreach (var item in Model.Product.ProductColors)
+                                {
+                                    <a >@item.Color.Name , </a>
+                                }
+                                </div>
+                      
                             </div>
                             <div class="other-options clearfix">
                                 <div class="quantity-box">
@@ -202,8 +208,21 @@
                                     <button type="button" class="theme-btn add-wishlist"><span><i class="far fa-heart"></i> &ensp; Add to wishlist</span></button>
                                 </div>
                             </div>
-                            <div class="product-cat"><strong>Categories :</strong> <a href="~/assets/#">Bags</a>, <a href="~/assets/#">Travel Bags</a>, <a href="~/assets/#">Tracking Bags</a></div>
-                            <div class="product-cat tags"><strong>Tags :</strong> <a href="~/assets/#">Bags</a>, <a href="~/assets/#">Travel</a>, <a href="~/assets/#">Tracking</a></div>
+                            <div class="product-cat"><strong>Categories :</strong> 
+                                @foreach (var item in Model.Product.ProductCategories)
+                            {
+                                
+                                <a >@item.Category.Name , </a>
+                            }
+                        </div>
+                            <div class="product-cat tags"><strong>Tags :</strong>
+                                @foreach (var item in Model.Product.ProductTags)
+                            {
+                                
+                                     <a >@item.Tag.Name , </a>
+                            }
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -220,14 +239,15 @@
                         <div class="tab active-tab" id="tab-1">
                             <div class="text text-content">
                                 <h5>Product Description</h5>
-                                <p>There are many reasons why an executive or VIP would choose personal security services. Executives could be in charge of large companies that are worth millions or more, leaving them to be a high-valued target for robbery, assault, and more. There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees. When it comes to other VIPs, they do not need necessarily need to be..</p>
+                                <p>@Model.Product.Description</p>
                                 <h5>Product Features</h5>
                                 <ul>
-                                    <li>Free Download Instagram Logo</li>
-                                    <li>Illustrator from Instagram Logo 9 Vectors svg vector collection</li>
-                                    <li>Vectors SVG vector illustration graphic art design format.</li>
-                                    <li>Following vectors are from the same pack as this vector also</li>
-                                    <li>Instagram Logo SVG Vector is a part of Social Websites</li>
+                                    @foreach (var item in Model.Product.ProductFeatures)
+                                {
+                                    
+                                    <li>@item.PFeature.Title</li>
+                                }
+                                    
                                 </ul>
                             </div>
                         </div>

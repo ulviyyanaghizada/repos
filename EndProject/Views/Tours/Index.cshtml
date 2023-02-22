@@ -252,34 +252,29 @@
 						<div class="faq-one style-two">
 							<div class="accordion-box clearfix">
 								<!--Block-->
+								@foreach (var days in Model.TourDays)
+							{
+								
 								<div class="accordion block active-block">
 									<div class="acc-btn active">Day 1 <i class="fa-regular fa-angle-down"></i></div>
 									<div class="acc-content">
 										<div class="content">
-											<div class="bold-text">Ranthambore National Park</div>
-											<div class="text">Leaving them to be a high-valued target for robbery, assault, and more. There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</div>
+											<div class="bold-text">@days.Title</div>
+											<div class="text">@days.Description</div>
 											<!-- Faq Gallery -->
 											<div class="faq-gallery">
 												<div class="row clearfix">
 													<!-- Image Column -->
+													@foreach (var item in days.TourDaysImages)
+													{
+														
 													<div class="image-column col-lg-4 col-md-4 col-sm-12">
 														<div class="image">
-															<img src="~/assets/images/resource/faq-1.jpg" alt="" />
+															<img src="~/assets/images/@item.ImageUrl" alt="" />
 														</div>
 													</div>
-													<!-- Image Column -->
-													<div class="image-column col-lg-4 col-md-4 col-sm-12">
-														<div class="image">
-															<img src="~/assets/images/resource/faq-1.jpg" alt="" />
-														</div>
-													</div>
-													<!-- Map Column -->
-													<div class="map-column col-lg-4 col-md-4 col-sm-12">
-														<div class="map-boxed">
-															<span class="icon fas fa-location-dot fa-fw"></span>
-															<h6>Google map</h6>
-														</div>
-													</div>
+													}
+													
 												</div>
 											</div>
 											<!-- End Faq Gallery -->
@@ -302,26 +297,13 @@
 														<!-- Tab / Active Tab -->
 														<div class="tab active-tab" id="prod-1">
 															<div class="inner-content">
-																<p>There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</p>
+																<p>@days.Hotel.Description</p>
 																<div class="hotel-info">
 																	<div class="hotel-image">
-																		<img src="~/assets/images/resource/hotel.jpg" alt="" />
+																		<img src="~/assets/images/hotel/@days.Hotel.ImageUrl" alt="" />
 																	</div>
-																	<div class="hotel-name">HOTEL RAJASTHAN PALACE JAIPUR</div>
-																	<ul class="list">
-																		<li>
-																			<span>Shared Room</span>
-																			Free
-																		</li>
-																		<li>
-																			<span>Double Room</span>
-																			$50 Extar
-																		</li>
-																		<li>
-																			<span>Single Room</span>
-																			$50 Extar
-																		</li>
-																	</ul>
+																	<div class="hotel-name">@days.Hotel.Name</div>
+															
 																</div>
 															</div>
 														</div>
@@ -329,41 +311,27 @@
 														<!-- Tab -->
 														<div class="tab" id="prod-2">
 															<div class="inner-content">
-																<p>There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</p>
-																<div class="hotel-info">
-																	<div class="hotel-image">
-																		<img src="~/assets/images/resource/hotel.jpg" alt="" />
-																	</div>
-																	<div class="hotel-name">HOTEL RAJASTHAN PALACE JAIPUR</div>
-																	<ul class="list">
-																		<li>
-																			<span>Shared Room</span>
-																			Free
-																		</li>
-																		<li>
-																			<span>Double Room</span>
-																			$50 Extar
-																		</li>
-																	</ul>
-																</div>
+																<p>Breakfast : @days.Hotel.BreakFast</p>
+																<p>Lunch : @days.Hotel.Lunch</p>
+																<p>@days.Hotel.Supper</p>
+
 															</div>
 														</div>
 
 														<!-- Tab -->
 														<div class="tab" id="prod-3">
 															<div class="inner-content">
-																<p>There could be threats made against executives and even bribery and blackmail from a member of the public or disgruntled employees.</p>
 																<div class="hotel-info">
-																	<div class="hotel-image">
-																		<img src="~/assets/images/resource/hotel.jpg" alt="" />
-																	</div>
-																	<div class="hotel-name">HOTEL RAJASTHAN PALACE JAIPUR</div>
+																	@foreach (var room in days.Hotel.HotelRooms)
+																	{
+																		
 																	<ul class="list">
 																		<li>
-																			<span>Shared Room</span>
-																			Free
+																			<span>@room.Room.Name</span>
+																			@room.Room.Price
 																		</li>
 																	</ul>
+																	}
 																</div>
 															</div>
 														</div>
@@ -375,6 +343,7 @@
 										</div>
 									</div>
 								</div>
+							}
 								
 
 							</div>
@@ -386,21 +355,16 @@
 					<div class="gallery-box">
 						<h5>Gallery</h5>
 						<div class="single-item-carousel owl-carousel owl-theme">
+							@foreach (var item in Model.TourImages)
+						{
+							
 							<div class="slide">
 								<div class="image">
-									<img src="~/assets/images/resource/gallery.jpg" alt="" />
+									<img src="~/assets/images/tour/@item.ImageUrl" alt="" />
 								</div>
 							</div>
-							<div class="slide">
-								<div class="image">
-									<img src="~/assets/images/resource/gallery.jpg" alt="" />
-								</div>
-							</div>
-							<div class="slide">
-								<div class="image">
-									<img src="~/assets/images/resource/gallery.jpg" alt="" />
-								</div>
-							</div>
+						}
+							
 						</div>
 					</div>
 

@@ -20,11 +20,6 @@ namespace EndProject.Controllers.Shop
             HomeVM home = new HomeVM
             {
                 
-                  Products = _context.Products?.Include(p => p.ProductColors).ThenInclude(pc => pc.Color)
-                .Include(p => p.ProductCategories).ThenInclude(pc => pc.Category).
-                Include(p => p.ProductTags).ThenInclude(pt => pt.Tag).
-                Include(p => p.ProductFeatures).ThenInclude(pf => pf.PFeature).Include(p => p.ProductImages),
-
                   Product = _context.Products.Include(p => p.ProductColors).ThenInclude(pc => pc.Color)
                 .Include(p => p.ProductCategories).ThenInclude(pc => pc.Category).
                 Include(p => p.ProductTags).ThenInclude(pt => pt.Tag).
