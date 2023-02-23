@@ -42,14 +42,13 @@ namespace EndProject.Controllers.Shop
 
         public async Task<IActionResult> CreateRole()
         {
-            IdentityRole superAdmin = new IdentityRole("SuperAdmin");
-            IdentityRole admin = new IdentityRole("Admin");
+           // IdentityRole superAdmin = new IdentityRole("SuperAdmin");
+          //  IdentityRole admin = new IdentityRole("Admin");
             IdentityRole member = new IdentityRole("Member");
-            await _roleManager.CreateAsync(superAdmin);
-            await _roleManager.CreateAsync(admin);
-            await _roleManager.CreateAsync(member);
-
-            return Ok();
+            //  await _roleManager.CreateAsync(superAdmin);
+            //  await _roleManager.CreateAsync(admin);
+            var res = await _roleManager.CreateAsync(member);
+            return Ok(res);
         }
 
 
@@ -87,13 +86,12 @@ namespace EndProject.Controllers.Shop
             {
                 if (model.EmailOrUsername.Contains("@")) ModelState.AddModelError("", "Email or Password is incorrect");
                 else ModelState.AddModelError("", "Username or Password is incorrect");
-
-                return View();
             }
+
+
 
             return RedirectToAction("Index", "Home");
         }
-
         public IActionResult Register()
         {
             return View();

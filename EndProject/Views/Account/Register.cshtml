@@ -1,4 +1,4 @@
-﻿
+﻿@model RegisterViewModel 
 @{
     ViewData["Title"] = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -149,32 +149,52 @@
         <div class="form-box site-form">
             <div class="signup-form">
                 <h5>Sign Up</h5>
-                <form method="post" action="contact.html">
+                <form method="post" asp-action="Register" >
                     <div class="row clearfix">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                            <div class="f-label">Name<i>*</i></div>
+                            <div class="field-inner">
+                                <input asp-for="FirstName" class="form-control form-control-user" placeholder="Name">
+                                <span asp-validation-for="FirstName" class="text-primary"></span>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                            <div class="f-label">SurName<i>*</i></div>
+                            <div class="field-inner">
+                                <input asp-for="LastName" class="form-control form-control-user" placeholder="SurName">
+                                <span asp-validation-for="LastName" class="text-primary"></span>
+                            </div>
+                        </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12">
                             <div class="f-label">User Name <i>*</i></div>
                             <div class="field-inner">
-                                <input type="text" name="fieldname" value="" placeholder="" required>
+                                <input asp-for="Username" class="form-control form-control-user" placeholder="Username">
+                                <span asp-validation-for="Username" class="text-primary"></span>
                             </div>
                         </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12">
                             <div class="f-label">Email Address <i>*</i></div>
                             <div class="field-inner">
-                                <input type="email" name="fieldname" value="" placeholder="" required>
+                                <input asp-for="Email" class="form-control form-control-user" placeholder="Email Address">
+                                <span asp-validation-for="Email" class="text-primary"></span>
                             </div>
                         </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12">
                             <div class="f-label">Password <i>*</i></div>
                             <div class="field-inner">
-                                <input type="password" name="fieldname" value="" placeholder="" required>
+                                <input asp-for="Password" class="form-control form-control-user" placeholder="Password">
+                                <span asp-validation-for="Password" class="text-primary"></span>
                             </div>
                         </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12">
                             <div class="f-label">Re-Enter Password <i>*</i></div>
                             <div class="field-inner">
-                                <input type="password" name="fieldname" value="" placeholder="" required>
+                                <input asp-for="ConfirmPassword" class="form-control form-control-user" placeholder="Repeat Password">
+                                <span asp-validation-for="ConfirmPassword" class="text-primary"></span>
                             </div>
                         </div>
+                                <div asp-validation-summary="ModelOnly" class="text-primary "></div>
+
 
                         <div class="form-group col-lg-12 col-md-12 col-sm-12">
                             <button type="submit" class="theme-btn btn-style-two"><span>Sign Up<i class="icon far fa-angle-right"></i></span></button>

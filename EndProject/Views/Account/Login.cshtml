@@ -147,20 +147,20 @@
         <div class="form-box site-form">
             <div class="login-form">
                 <h5>Login In</h5>
-                <form method="post" action="contact.html">
+                <form method="post" >
                     <div class="row clearfix">
                         <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                            @*<div class="f-label">Email Address <i>*</i></div>
+                            <div class="f-label">Email Address <i>*</i></div>
                             <div class="field-inner">
-                                <input type="email" name="fieldname" value="" placeholder="" required>
-                            </div>*@
-                             <input asp-for="EmailOrUsername" class="form-control form-control-user"  placeholder="Enter Username or Email Address...">
-                                            <span asp-validation-for="EmailOrUsername" class="text-primary"></span>
+                                <input asp-for="EmailOrUsername" class="form-control form-control-user" placeholder="Enter Username or Email Address...">
+                                <span asp-validation-for="EmailOrUsername" class="text-primary"></span>
+                            </div>
                         </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12">
                             <div class="f-label">Password <i>*</i></div>
                             <div class="field-inner">
-                                <input type="password" name="fieldname" value="" placeholder="" required>
+                                <input asp-for="Password" class="form-control form-control-user" placeholder="Password">
+                                <span asp-validation-for="Password" class="text-primary"></span>
                             </div>
                         </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12">
@@ -184,7 +184,7 @@
                 </form>
             </div>
 
-            <div class="lower-link">Don't have a account? <a href="signup.html">Sign Up</a> Now</div>
+            <div class="lower-link">Don't have a account? <a asp-controller="Account" asp-action="Register">Sign Up</a> Now</div>
         </div>
     </div>
 </section>

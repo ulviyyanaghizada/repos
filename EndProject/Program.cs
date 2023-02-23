@@ -27,7 +27,7 @@ namespace EndProject
                 opt.Password.RequireNonAlphanumeric = false;
                 opt.Password.RequiredLength = 5;
                 opt.Lockout.AllowedForNewUsers = true;
-                opt.SignIn.RequireConfirmedEmail = true;
+                opt.SignIn.RequireConfirmedEmail = false;
                 opt.User.RequireUniqueEmail = true;
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
 

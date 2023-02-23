@@ -35776,6 +35776,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\country\09f10d3c-87b3-48c2-9937-c455675ec8b7.jpga25ec4ac-city-33415-1732e873f4b.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\country\2c72582a-f249-4ef3-a7ab-d4c2e2d75d8f.jpga25ec4ac-city-33415-1732e873f4b.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>EndProject</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EndProject</BasePath>
+      <RelativePath>assets/images/country/2c72582a-f249-4ef3-a7ab-d4c2e2d75d8f.jpga25ec4ac-city-33415-1732e873f4b.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\country\2c72582a-f249-4ef3-a7ab-d4c2e2d75d8f.jpga25ec4ac-city-33415-1732e873f4b.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\images\country\452682cc-c9a9-49df-aef2-24ca23750983.jpgbaku-azerbaycan.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>EndProject</SourceId>

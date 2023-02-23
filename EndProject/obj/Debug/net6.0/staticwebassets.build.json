@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qHsUS4SK3G6jGBbDRM3NMMQwR4AsvxJxmgc0aCJ/IQU=",
+  "Hash": "xijbqi1/A/kVKHGw8rzzG8UzxobSVuiolsMEQKBrL8s=",
   "Source": "EndProject",
   "BasePath": "_content/EndProject",
   "Mode": "Default",
@@ -38027,6 +38027,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\country\\09f10d3c-87b3-48c2-9937-c455675ec8b7.jpga25ec4ac-city-33415-1732e873f4b.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\country\\2c72582a-f249-4ef3-a7ab-d4c2e2d75d8f.jpga25ec4ac-city-33415-1732e873f4b.jpg",
+      "SourceId": "EndProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\",
+      "BasePath": "_content/EndProject",
+      "RelativePath": "assets/images/country/2c72582a-f249-4ef3-a7ab-d4c2e2d75d8f.jpga25ec4ac-city-33415-1732e873f4b.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\country\\2c72582a-f249-4ef3-a7ab-d4c2e2d75d8f.jpga25ec4ac-city-33415-1732e873f4b.jpg"
     },
     {
       "Identity": "C:\\Users\\SysAdmin\\Desktop\\EndProject\\EndProject\\wwwroot\\assets\\images\\country\\452682cc-c9a9-49df-aef2-24ca23750983.jpgbaku-azerbaycan.jpg",
